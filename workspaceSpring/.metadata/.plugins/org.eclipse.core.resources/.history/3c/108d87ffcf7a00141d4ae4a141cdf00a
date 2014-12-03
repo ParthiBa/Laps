@@ -1,0 +1,63 @@
+package team6.LapsApp.model;
+
+import java.sql.Date;
+
+import javax.persistence.*;
+import javax.validation.constraints.*;
+
+@Entity
+@Table(name="employees")
+public class Employee {
+	@Id
+	@Column(name="EmployeeID")
+	private String EmployeeID;
+	@Basic
+	@NotNull
+	private String Employeename;
+	@Temporal(TemporalType.DATE)
+	@Past
+	private Date DOB;
+	private String RoleID;
+	@NotNull
+	private String Password;
+	@NotNull
+	private String SupervisorID;
+	public String getEmployeeID() {
+		return EmployeeID;
+	}
+	public void setEmployeeID(String employeeID) {
+		EmployeeID = employeeID;
+	}
+	public String getEmployeename() {
+		return Employeename;
+	}
+	public void setEmployeename(String employeename) {
+		Employeename = employeename;
+	}
+	public Date getDOB() {
+		return DOB;
+	}
+	public void setDOB(Date dOB) {
+		DOB = dOB;
+	}
+	public String getRoleID() {
+		return RoleID;
+	}
+	public void setRoleID(String roleID) {
+		RoleID = roleID;
+	}
+	public String getPassword() {
+		return Password;
+	}
+	public void setPassword(String password) {
+		Password = password;
+	}
+	public String getSupervisorID() {
+		return SupervisorID;
+	}
+	public void setSupervisorID(String supervisorID) {
+		SupervisorID = supervisorID;
+	}
+	
+
+}

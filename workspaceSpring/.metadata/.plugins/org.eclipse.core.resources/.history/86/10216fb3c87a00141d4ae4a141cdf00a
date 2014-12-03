@@ -1,0 +1,20 @@
+package team6.LapsApp.model;
+
+public class EmployeesDTO {
+    private String roleid;
+    private String roletype;
+	//for role id, PK, generate by system
+    public String getRoleid() {
+		return roleid;
+	}
+	public void setRoleid(String roleid) {
+		this.roleid = roleid;
+	}
+	public String getRoletype() {
+		return roletype;
+	}
+	public void setRoletype(String roletype) {
+		this.roletype = roletype;
+	}
+    
+}

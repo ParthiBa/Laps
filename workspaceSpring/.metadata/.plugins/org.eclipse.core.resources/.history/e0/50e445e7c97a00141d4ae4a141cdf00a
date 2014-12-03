@@ -1,0 +1,20 @@
+package team6.LapsApp.model;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="employees")
+public class employee {
+	@Id
+	@Column(name="EmployeeID")
+	private String EmployeeID;
+	@Basic
+	
+	private String Employeename;
+	private Date DOB;
+	private String RoleID;
+	private String Password;
+	private String SupervisorID;
+	
+
+}
