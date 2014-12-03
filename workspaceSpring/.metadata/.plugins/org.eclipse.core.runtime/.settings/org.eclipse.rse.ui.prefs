@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 org.eclipse.rse.preferences.order.connections=BOR31308.Local
+=======
+org.eclipse.rse.preferences.order.connections=BOR31302.Local
+>>>>>>> fixed xml file

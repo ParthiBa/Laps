@@ -48,8 +48,14 @@ Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This
     &lt;li&gt;
       Additionally, check out &lt;a href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-spring-boot-and-netflix-oss"&gt;Dr. Syer and Spencer Gibb's talk introducing Spring Cloud&lt;/a&gt; to the world at SpringOne2GX 2014!
     &lt;/li&gt;
+<<<<<<< HEAD
     &lt;li&gt;Check out the SpringOne2GX 2014 replay of Reactor project ninjas Jon Brisbin  and Stephane Maldini's talk: &lt;a href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-building-reactive-applications-with-reactor-and-the-reactive-streams-standa4d"&gt;Building Reactive applications with Reactor and the Reactive Streams standard&lt;/a&gt;
 &lt;/li&gt;
+=======
+    &lt;li&gt;
+      Check out the SpringOne2GX 2014 replay of Reactor project ninjas Jon Brisbin  and Stephane Maldini's talk [on building reactive applications with Reactor and the reacive streams standard].
+    &lt;/li&gt;
+>>>>>>> fixed xml file
     &lt;li&gt;
       Join Spring Integration project-lead Gary Russell for a not-to-be-missed webinar &lt;a href="https://spring.io/blog/2014/12/02/webinar-introducing-the-java-dsl-for-spring-integration"&gt;on January 27th that introduces the just-released Spring Integration Java configuration DSL&lt;/a&gt;!
     &lt;/li&gt;

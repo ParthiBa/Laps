@@ -1,5 +1,9 @@
 PROBLEMS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
+<<<<<<< HEAD
 platformState=1417593922390
+=======
+platformState=1417510131759
+>>>>>>> fixed xml file
 quickStart=false
 tipsAndTricks=true

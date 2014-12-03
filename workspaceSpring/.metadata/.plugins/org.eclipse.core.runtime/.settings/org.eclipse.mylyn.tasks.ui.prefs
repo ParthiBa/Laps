@@ -1,3 +1,7 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
+=======
+migrated.task.repositories.secure.store=true
+>>>>>>> fixed xml file
 org.eclipse.mylyn.tasks.ui.filters.nonmatching=true
 org.eclipse.mylyn.tasks.ui.filters.nonmatching.encouraged=true

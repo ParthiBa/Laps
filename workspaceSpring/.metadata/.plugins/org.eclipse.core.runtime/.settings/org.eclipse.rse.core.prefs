@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 activeuserprofiles=BOR31308;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=a0123056r
 useridperkey=BOR31308.Local\=a0123056r;
+=======
+activeuserprofiles=BOR31302;Team
+eclipse.preferences.version=1
+org.eclipse.rse.systemtype.local.systemType.defaultUserId=a0123056r
+useridperkey=BOR31302.Local\=a0123056r;
+>>>>>>> fixed xml file

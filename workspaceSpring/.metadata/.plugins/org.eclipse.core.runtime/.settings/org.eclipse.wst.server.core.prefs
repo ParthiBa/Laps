@@ -1,2 +1,7 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimes>\r\n  <runtime gae-sdk-name\="App Engine" gae-sdk-version\="1.9.7" id\="Google App Engine" location\="C\:/eclipse/plugins/com.google.appengine.eclipse.sdkbundle_1.9.7/appengine-java-sdk-1.9.7/" name\="Google App Engine" runtime-type-id\="com.google.appengine.runtime.id1" timestamp\="0"/>\r\n  <runtime id\="Pivotal tc Server Developer Edition (Runtime) v3.0" id-set\="true" location\="D\:/sts-bundle/pivotal-tc-server-developer-3.0.2.RELEASE" name\="Pivotal tc Server Developer Edition (Runtime) v3.0" runtime-type-id\="com.pivotal.server.tc.runtime.80" timestamp\="0"/>\r\n</runtimes>\r\n
+=======
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimes>\r\n  <runtime id\="Pivotal tc Server Developer Edition (Runtime) v3.0" id-set\="true" location\="C\:/Users/Public/Music/sts-bundle/pivotal-tc-server-developer-3.0.0.RELEASE" name\="Pivotal tc Server Developer Edition (Runtime) v3.0" runtime-type-id\="com.pivotal.server.tc.runtime.80" timestamp\="0"/>\r\n</runtimes>\r\n
+>>>>>>> fixed xml file

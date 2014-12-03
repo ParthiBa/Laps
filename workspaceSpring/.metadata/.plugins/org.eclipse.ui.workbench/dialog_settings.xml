@@ -12,4 +12,9 @@
 		<list key="textEntries">
 		</list>
 	</section>
+<<<<<<< HEAD
+=======
+	<section name="ImportExportAction">
+	</section>
+>>>>>>> fixed xml file
 </section>
