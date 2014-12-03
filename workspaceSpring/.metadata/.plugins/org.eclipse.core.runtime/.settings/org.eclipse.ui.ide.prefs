@@ -1,9 +1,8 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=fixed xml file
 PROBLEMS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
-<<<<<<< HEAD
-platformState=1417593922390
-=======
-platformState=1417510131759
->>>>>>> fixed xml file
+platformState=1417596240936
 quickStart=false
 tipsAndTricks=true

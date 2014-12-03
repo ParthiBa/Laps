@@ -1,7 +1,5 @@
 INDEX VERSION 1.127
-<<<<<<< HEAD
 C:\Users\a0123056r\laps\workspaceSpring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\580091966.index
-=======
-C:\Users\a0123056r\Documents\workspace-sts-3.6.2.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\580091966.index
->>>>>>> fixed xml file
 \LapsApp\src\main\java
+C:\Users\a0123056r\laps\workspaceSpring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3559197585.index
+\SpringDAOLayerDemo\src\main\java

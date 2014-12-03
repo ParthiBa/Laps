@@ -1,0 +1,16 @@
+package edu.iss.demo.service;
+
+import java.util.List;
+
+import edu.iss.demo.exception.StudentNotFound;
+import edu.iss.demo.model.Student;
+
+public interface StudentService {
+	
+	public Student create(Student s);
+	public Student delete(long id) throws StudentNotFound;
+	public List<Student> findAll();
+	public Student update(Student s) throws StudentNotFound;
+	public Student findById(long id);
+
+}

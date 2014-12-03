@@ -1,0 +1,16 @@
+127.0.0.1 - - [03/Dec/2014:19:19:14 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [03/Dec/2014:19:19:16 +0800] "GET /LapsApp/ HTTP/1.1" 200 165
+127.0.0.1 - - [03/Dec/2014:19:29:46 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [03/Dec/2014:19:29:47 +0800] "GET /LapsApp/ HTTP/1.1" 404 1010
+127.0.0.1 - - [03/Dec/2014:19:34:38 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [03/Dec/2014:19:34:38 +0800] "GET /LapsApp/WEB-INF/classes/com/team6/service/EmployeeServiceImpl.java HTTP/1.1" 404 1126
+127.0.0.1 - - [03/Dec/2014:19:36:30 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [03/Dec/2014:19:36:31 +0800] "GET /LapsApp/WEB-INF/classes/com/team6/service/EmployeeServiceImpl.java HTTP/1.1" 404 1126
+127.0.0.1 - - [03/Dec/2014:19:40:08 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [03/Dec/2014:19:40:09 +0800] "GET /LapsApp/WEB-INF/classes/com/team6/LapsApp/HomeController.java HTTP/1.1" 404 1116
+0:0:0:0:0:0:0:1 - - [03/Dec/2014:19:43:30 +0800] "GET /LapsApp/ HTTP/1.1" 404 1010
+0:0:0:0:0:0:0:1 - - [03/Dec/2014:19:43:39 +0800] "GET /LapsApp/ HTTP/1.1" 404 1010
+127.0.0.1 - - [03/Dec/2014:19:45:12 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [03/Dec/2014:19:45:12 +0800] "GET /LapsApp/WEB-INF/classes/application.properties HTTP/1.1" 404 1086
+127.0.0.1 - - [03/Dec/2014:19:46:45 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [03/Dec/2014:19:46:45 +0800] "GET /LapsApp/ HTTP/1.1" 404 1010

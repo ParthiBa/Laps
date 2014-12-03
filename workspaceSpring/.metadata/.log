@@ -3373,3 +3373,917 @@ java.lang.NullPointerException
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 14:53:07.111
 !MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 >>>>>>> fixed xml file
+!SESSION 2014-12-03 18:48:25.300 -----------------------------------------------
+eclipse.buildId=3.6.2.201410091308-RELEASE-e44
+java.version=1.7.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.fx.core 4 0 2014-12-03 18:48:26.504
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.core [385]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+  Unresolved requirement: Require-Bundle: org.eclipse.jdt.annotation; bundle-version="[2.0.0,3.0.0)"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.jdt.annotation; bundle-version="2.0.0.v20140415-1436"
+       org.eclipse.jdt.annotation [394]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.osgi.util 4 0 2014-12-03 18:48:26.510
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.osgi.util [387]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.core; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.core; bundle-version="1.0.0.201408150602"
+       org.eclipse.fx.core [385]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+         Unresolved requirement: Require-Bundle: org.eclipse.jdt.annotation; bundle-version="[2.0.0,3.0.0)"; resolution:="optional"
+           -> Bundle-SymbolicName: org.eclipse.jdt.annotation; bundle-version="2.0.0.v20140415-1436"
+              org.eclipse.jdt.annotation [394]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springsource.ide.eclipse.commons.browser 4 0 2014-12-03 18:48:26.694
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springsource.ide.eclipse.commons.browser [948]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.osgi.util; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.osgi.util; bundle-version="1.0.0.201408150602"
+       org.eclipse.fx.osgi.util [387]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.core; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.fx.core; bundle-version="1.0.0.201408150602"
+              org.eclipse.fx.core [385]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+                Unresolved requirement: Require-Bundle: org.eclipse.jdt.annotation; bundle-version="[2.0.0,3.0.0)"; resolution:="optional"
+                  -> Bundle-SymbolicName: org.eclipse.jdt.annotation; bundle-version="2.0.0.v20140415-1436"
+                     org.eclipse.jdt.annotation [394]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springsource.ide.eclipse.commons.gettingstarted 4 0 2014-12-03 18:48:26.698
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springsource.ide.eclipse.commons.gettingstarted [955]
+  Unresolved requirement: Require-Bundle: org.springsource.ide.eclipse.commons.browser
+    -> Bundle-SymbolicName: org.springsource.ide.eclipse.commons.browser; bundle-version="3.6.2.201410090827-RELEASE"; singleton:="true"
+       org.springsource.ide.eclipse.commons.browser [948]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.osgi.util; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.fx.osgi.util; bundle-version="1.0.0.201408150602"
+              org.eclipse.fx.osgi.util [387]
+                Unresolved requirement: Require-Bundle: org.eclipse.fx.core; bundle-version="0.9.0"
+                  -> Bundle-SymbolicName: org.eclipse.fx.core; bundle-version="1.0.0.201408150602"
+                     org.eclipse.fx.core [385]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jdt.annotation; bundle-version="[2.0.0,3.0.0)"; resolution:="optional"
+                         -> Bundle-SymbolicName: org.eclipse.jdt.annotation; bundle-version="2.0.0.v20140415-1436"
+                            org.eclipse.jdt.annotation [394]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-12-03 18:48:43.577
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2014-12-03 18:48:43.733
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2014-12-03 18:48:43.909
+!MESSAGE Unable to load resource file:/C:/Users/a0123056r/laps/workspaceSpring/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+!STACK 0
+org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException: org.xml.sax.SAXParseExceptionpublicId: file:/C:/Users/a0123056r/laps/workspaceSpring/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/C:/Users/a0123056r/laps/workspaceSpring/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 2; columnNumber: 2; The markup in the document preceding the root element must be well-formed.
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.handleDemandLoadException(ResourceSetImpl.java:319)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:278)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:406)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.getResource(ResourceHandler.java:350)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadResource(ResourceHandler.java:326)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:231)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:435)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:260)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:601)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/C:/Users/a0123056r/laps/workspaceSpring/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/C:/Users/a0123056r/laps/workspaceSpring/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 2; columnNumber: 2; The markup in the document preceding the root element must be well-formed.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(Unknown Source)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:261)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1518)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1297)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoad(ResourceSetImpl.java:259)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
+	... 24 more
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2014-12-03 18:48:43.910
+!MESSAGE The persisted workbench has no top-level windows, so reinitializing with defaults.
+!STACK 0
+java.lang.Exception
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:236)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:435)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:260)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:601)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.jst.jsp.core 4 4 2014-12-03 18:48:48.308
+!MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-12-03 18:48:49.587
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springsource.ide.eclipse.dashboard.ui 4 0 2014-12-03 18:48:49.629
+!MESSAGE Unexpected exception
+!STACK 1
+org.eclipse.ui.PartInitException: Unable to open editor, unknown editor ID: 'org.springsource.ide.eclipse.commons.gettingstarted.dashboard.WelcomeDashboard'
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:3154)
+	at org.eclipse.ui.internal.WorkbenchPage.access$23(WorkbenchPage.java:3125)
+	at org.eclipse.ui.internal.WorkbenchPage$9.run(WorkbenchPage.java:3107)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3102)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3066)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3047)
+	at org.springsource.ide.eclipse.dashboard.ui.actions.ShowDashboardPageAction$1.runInUIThread(ShowDashboardPageAction.java:77)
+	at org.eclipse.ui.progress.UIJob$1.run(UIJob.java:97)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:136)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4147)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3764)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+!SUBENTRY 1 org.eclipse.ui 4 0 2014-12-03 18:48:49.630
+!MESSAGE Unable to open editor, unknown editor ID: 'org.springsource.ide.eclipse.commons.gettingstarted.dashboard.WelcomeDashboard'
+
+!ENTRY org.springsource.ide.eclipse.dashboard.ui 4 0 2014-12-03 18:48:51.540
+!MESSAGE An unexpected error occurred while retrieving feed content from cache.
+!STACK 0
+com.sun.syndication.io.ParsingFeedException: Invalid XML: Error on line 51: The content of elements must consist of well-formed character data or markup.
+	at com.sun.syndication.io.WireFeedInput.build(WireFeedInput.java:182)
+	at com.sun.syndication.io.SyndFeedInput.build(SyndFeedInput.java:122)
+	at org.springsource.ide.eclipse.dashboard.internal.ui.editors.FeedsReader.readFeeds(FeedsReader.java:93)
+	at org.springsource.ide.eclipse.dashboard.internal.ui.editors.CachedFeedsManager.readCachedFeeds(CachedFeedsManager.java:106)
+	at org.springsource.ide.eclipse.dashboard.internal.ui.editors.DashboardMainPage$5.run(DashboardMainPage.java:410)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:136)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4147)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3764)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+Caused by: org.jdom.input.JDOMParseException: Error on line 51: The content of elements must consist of well-formed character data or markup.
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:533)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:946)
+	at com.sun.syndication.io.WireFeedInput.build(WireFeedInput.java:178)
+	... 30 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 51; columnNumber: 2; The content of elements must consist of well-formed character data or markup.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:518)
+	... 32 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 18:48:52.746
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 18:48:52.761
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 18:48:56.641
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 18:48:56.649
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 18:49:00.895
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 18:49:00.900
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2014-12-03 18:49:09.565
+!MESSAGE An error occurred while collecting items to be installed
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2014-12-03 18:49:09.566
+!MESSAGE session context was:(profile=DefaultProfile, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,com.vmware.vfabric.ide.eclipse.tcserver.core,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,com.vmware.vfabric.ide.eclipse.tcserver.insight.ui,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,com.vmware.vfabric.ide.eclipse.tcserver.livegraph,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,com.vmware.vfabric.ide.eclipse.tcserver.reloading,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,com.vmware.vfabric.ide.eclipse.tcserver.ui,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.aspectj.ajde,1.8.5.20141117171500
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.aspectj.runtime,1.8.5.20141117171500
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.aspectj.weaver,1.8.5.20141117171500
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ajdt.core,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ajdt.doc.user,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ajdt.examples,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ajdt.mylyn.ui,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ajdt.ui,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.aspectj,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.contribution.visualiser,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.contribution.weaving.jdt,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.contribution.xref.core,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.contribution.xref.ui,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.osgi,3.10.2.v20141020-1740
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.ajdt.ui.visualiser,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.ajdt.ui.xref,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.aop.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.aop.mylyn,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.aop.ui,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.aop.ui.matcher,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.batch,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.core.autowire,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.core.metadata,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.mylyn,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.autowire,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.editor,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.graph,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.livegraph,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.refactoring,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.search,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.bestpractices,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.boot,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.config.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.config.graph,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.config.ui,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.data.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.doc,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.integration,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.maven,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.metadata,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.mylyn,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.quickfix,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.security,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.uaa,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.ui,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.webflow.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.webflow.mylyn,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.webflow.ui,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.webflow.ui.editor,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.webflow.ui.graph,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.566
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.wizard,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.browser,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.completions,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.configurator,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.content.core,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.core,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.frameworks.core,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.frameworks.ui,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.gettingstarted,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.livexp,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.quicksearch,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.ui,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.dashboard.ui,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.sts,3.6.3.201411281415-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.vmware.vfabric.ide.eclipse.tcserver,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.vmware.vfabric.ide.eclipse.tcserver.insight,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.aspectj,1.8.5.20141117171500
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: osgi.bundle,org.aspectj.runtime.source,1.8.5.20141117171500
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.ajdt,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.contribution.weaving,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.contribution.xref,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.e4.rcp.R441patch,1.0.0
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.ajdt.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.aop.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.autowire.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.batch.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.data.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.integration.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.maven.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.mylyn.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.security.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.uaa.feature,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.webflow.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springsource.ide.eclipse.commons,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springsource.ide.eclipse.commons.quicksearch.feature,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springsource.ide.eclipse.dashboard,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springsource.sts,3.6.3.201411281415-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: binary,org.springsource.sts.ide.executable.win32.win32.x86_64,3.6.3.201411281415-RELEASE-e44
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springsource.sts.package,3.6.3.201411281415-RELEASE-e44
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.567
+!MESSAGE No repository found containing: binary,org.springsource.sts.package_root,3.6.3.201411281415-RELEASE-e44
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2014-12-03 18:49:09.568
+!MESSAGE An error occurred while collecting items to be installed
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2014-12-03 18:49:09.568
+!MESSAGE session context was:(profile=DefaultProfile, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,com.vmware.vfabric.ide.eclipse.tcserver.core,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,com.vmware.vfabric.ide.eclipse.tcserver.insight.ui,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,com.vmware.vfabric.ide.eclipse.tcserver.livegraph,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,com.vmware.vfabric.ide.eclipse.tcserver.reloading,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,com.vmware.vfabric.ide.eclipse.tcserver.ui,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.aspectj.ajde,1.8.5.20141117171500
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.aspectj.runtime,1.8.5.20141117171500
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.aspectj.weaver,1.8.5.20141117171500
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ajdt.core,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ajdt.doc.user,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ajdt.examples,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ajdt.mylyn.ui,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.ajdt.ui,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.aspectj,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.contribution.visualiser,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.contribution.weaving.jdt,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.contribution.xref.core,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.contribution.xref.ui,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.568
+!MESSAGE No repository found containing: osgi.bundle,org.eclipse.osgi,3.10.2.v20141020-1740
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.ajdt.ui.visualiser,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.ajdt.ui.xref,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.aop.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.aop.mylyn,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.aop.ui,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.aop.ui.matcher,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.batch,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.core.autowire,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.core.metadata,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.mylyn,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.autowire,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.editor,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.graph,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.livegraph,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.refactoring,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.beans.ui.search,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.bestpractices,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.boot,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.config.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.config.graph,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.config.ui,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.data.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.doc,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.integration,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.maven,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.metadata,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.mylyn,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.quickfix,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.security,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.uaa,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.ui,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.webflow.core,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.webflow.mylyn,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.webflow.ui,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.webflow.ui.editor,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.webflow.ui.graph,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springframework.ide.eclipse.wizard,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.browser,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.completions,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.configurator,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.content.core,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.core,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.frameworks.core,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.frameworks.ui,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.gettingstarted,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.livexp,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.quicksearch,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.commons.ui,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.ide.eclipse.dashboard.ui,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.springsource.sts,3.6.3.201411281415-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.vmware.vfabric.ide.eclipse.tcserver,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: org.eclipse.update.feature,com.vmware.vfabric.ide.eclipse.tcserver.insight,3.6.3.201411271101-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.aspectj,1.8.5.20141117171500
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: osgi.bundle,org.aspectj.runtime.source,1.8.5.20141117171500
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.ajdt,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.569
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.contribution.weaving,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.contribution.xref,2.2.4.e44x-20141118-0700
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.eclipse.e4.rcp.R441patch,1.0.0
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.ajdt.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.aop.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.autowire.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.batch.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.data.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.integration.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.maven.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.mylyn.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.security.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.uaa.feature,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springframework.ide.eclipse.webflow.feature,3.6.3.201411271034-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springsource.ide.eclipse.commons,3.6.3.201411271002-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springsource.ide.eclipse.commons.quicksearch.feature,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springsource.ide.eclipse.dashboard,3.6.3.201411271001-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springsource.sts,3.6.3.201411281415-RELEASE
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: binary,org.springsource.sts.ide.executable.win32.win32.x86_64,3.6.3.201411281415-RELEASE-e44
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: org.eclipse.update.feature,org.springsource.sts.package,3.6.3.201411281415-RELEASE-e44
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 0 2014-12-03 18:49:09.570
+!MESSAGE No repository found containing: binary,org.springsource.sts.package_root,3.6.3.201411281415-RELEASE-e44
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 18:56:42.546
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 18:56:42.549
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jdt.core 4 969 2014-12-03 18:57:45.422
+!MESSAGE import team6.LapsApp.init.* [in <import container> [in [Working copy] employeeRepostitory.java [in team6.LapsApp.repository [in src/main/java [in LapsApp]]]]] does not exist
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2014-12-03 18:58:48.737
+!MESSAGE Project facet grails.app has not been defined. It is used in plugin com.vmware.vfabric.ide.eclipse.tcserver.core.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 18:58:55.114
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 18:58:55.116
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2014-12-03 19:01:03.118
+!MESSAGE Several ports (8005, 8080, 8009) required by Tomcat v8.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:19:07.468
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:19:07.471
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:00.392
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:00.395
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:00.739
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:00.744
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:00.875
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:00.880
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:00.999
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:01.004
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:01.137
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:01.142
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:01.307
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:01.311
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:01.789
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:01.793
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:02.013
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:02.017
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:03.157
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:03.158
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:23.463
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:23.466
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:41.251
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:20:41.253
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jdt.core 4 969 2014-12-03 19:20:50.684
+!MESSAGE package com.team6.service [in [Working copy] StudentService.java [in com.team6.service [in src/main/java [in LapsApp]]]] does not exist
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:23:35.382
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:23:35.384
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:24:27.666
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:24:27.668
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:24:58.127
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:24:58.130
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:25:54.367
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:25:54.370
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:25:55.460
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:25:55.462
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:26:37.987
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:26:37.988
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:29:36.929
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:29:36.932
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:33:36.734
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:33:36.736
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:39:30.562
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:39:30.564
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:39:58.010
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:39:58.013
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:45:00.857
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:45:00.861
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:45:25.613
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:45:25.618
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:46:17.761
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:46:17.763
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:46:31.448
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-03 19:46:31.454
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!

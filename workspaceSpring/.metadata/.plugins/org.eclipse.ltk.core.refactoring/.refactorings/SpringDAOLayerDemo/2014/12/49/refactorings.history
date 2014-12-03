@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;edu.iss.demo.service&apos; to &apos;LapsApp/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;SpringDAOLayerDemo&apos;&#x0D;&#x0A;- Destination element: &apos;LapsApp/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;SpringDAOLayerDemo/src/main/java/edu.iss.demo.service&apos;" description="Copy package" destination="=LapsApp/src\/main\/java" element1="/src\/main\/java&lt;edu.iss.demo.service" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1417605623186" version="1.0"/>
+</session>

@@ -1,0 +1,7 @@
+package team6.LapsApp.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface employeeRepostitory extends CrudRepository<Employee, ID> {
+
+}
