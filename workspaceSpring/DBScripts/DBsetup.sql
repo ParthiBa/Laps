@@ -104,7 +104,7 @@ RoleID  varchar(255),
 LeaveTypeID  varchar(255),
 FromDate date,
 ToDate date,
-isFullDay boolean,
+NumberOfDays float8(3,1),
 leaveStatus varchar(255),
 workDissemination varchar(255),
 ContactDetails  varchar(255),
@@ -118,16 +118,16 @@ Foreign key(LeaveTypeID) references LeaveType(LeaveTypeID)
 
 /*drop table leaveDetails; */
 
-insert into leaveDetails values ("E01","E","AN",'2014-06-22','2014-06-22',TRUE,"APPROVED","E02","");
+insert into leaveDetails values ("E01","E","AN",'2014-06-22','2014-06-22',1,"APPROVED","E02","");
 
-insert into leaveDetails values ("E02","M","MED",'2014-06-27','2014-06-29',TRUE,"DELETED","E05","");
+insert into leaveDetails values ("E02","M","MED",'2014-06-27','2014-06-29',2,"DELETED","E05","");
 
 
-insert into leaveDetails values ("E05","M","COMP",'2014-07-27','2014-07-29',TRUE,"APPLIED","E02","");
+insert into leaveDetails values ("E05","M","COMP",'2014-07-27','2014-07-29',2,"APPLIED","E02","");
 
-insert into leaveDetails values ("E03","A","MED",'2014-07-30','2014-07-30',FALSE,"REJECTED","E02","");
+insert into leaveDetails values ("E03","A","MED",'2014-07-30','2014-07-30',0.5,"REJECTED","E02","");
 
-insert into leaveDetails values ("E06","E","AN",'2014-12-30','2014-12-30',true,"APPLIED","E04","");
+insert into leaveDetails values ("E06","E","AN",'2014-12-30','2014-12-30',1,"APPLIED","E04","");
 
 
 create table Holidays
