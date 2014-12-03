@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.team6.LapsApp.model.Employee;
-import com.team6.service.EmployeeService;
+import com.team6.LapsApp.service.EmployeeService;
 
 /**
  * Handles requests for the application home page.
@@ -37,7 +37,7 @@ public class HomeController {
 		Employee s = null;
 		String formattedDate = dateFormat.format(date);
 		try{
-	 s = ers.findById("E01");
+			s = ers.findById("E01");
 		}
 		catch(Exception e){
 		e.printStackTrace();
