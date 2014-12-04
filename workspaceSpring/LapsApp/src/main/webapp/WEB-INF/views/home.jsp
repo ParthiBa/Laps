@@ -8,7 +8,7 @@
 <h1>
 	Hello world!  
 </h1>
-
+<a href="${pageContext.request.contextPath}/employee/listleavedetails/${E01}.html">View all students</a><br/>
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>

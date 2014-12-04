@@ -3,6 +3,7 @@ package com.team6.LapsApp.service;
 import java.util.List;
 
 import com.team6.LapsApp.model.Employee;
+import com.team6.LapsApp.model.LeaveDetail;
 
 
 
@@ -13,5 +14,4 @@ public interface EmployeeService {
 //	public List<Student> findAll();
 //	public Student update(Student s) throws StudentNotFound;
 	public Employee findById(String id);
-
 }

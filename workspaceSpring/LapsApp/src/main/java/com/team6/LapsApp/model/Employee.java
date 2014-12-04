@@ -64,6 +64,7 @@ public class Employee {
 		this.supervisorID = supervisorID;
 	}
 	
-	
-
+	public void findPersonalLeaves(String empid){
+		
+	}
 }

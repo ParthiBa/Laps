@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.team6.LapsApp.model.Employee;
+import com.team6.LapsApp.model.LeaveDetail;
 import com.team6.LapsApp.repository.employeeRepostitory;
 
 @Service
@@ -30,6 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Employee findById(String id) {
 		return er.findOne(id);
 	}
+
 
 //	@Override
 //	@Transactional(rollbackFor=StudentNotFound.class)
