@@ -1,3 +1,7 @@
+Please populate your database using sqlscripts 
+and test the our project
+
+
 basic git commands
 
 git pull
