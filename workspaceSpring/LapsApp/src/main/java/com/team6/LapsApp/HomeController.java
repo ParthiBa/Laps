@@ -42,7 +42,7 @@ public class HomeController {
 		catch(Exception e){
 		e.printStackTrace();
 		}
-		model.addAttribute("serverTime",s);
+		model.addAttribute("serverTime",s.getEmployeename());
 		
 		return "home";
 	}
