@@ -6,5 +6,5 @@ import com.team6.LapsApp.model.*;
 
 public interface employeeRepostitory extends CrudRepository<Employee,String>
 {
-
+	
 }

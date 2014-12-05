@@ -30,7 +30,7 @@ public class LeaveDetailsServiceImpl implements LeaveDetailsService{
 	}
 
 	@Override
-	public List<LeaveDetail> ListMaxLeavesList() {
+	public List<LeaveDetail> ListPersonTookMaxLeave() {
 		List<LeaveDetail> result = null;
 		result = m_repository.ListPersonTookMaxLeave();
 		return result;

@@ -8,5 +8,5 @@ public interface LeaveDetailsService {
 
 	public List<LeaveDetail> FinfPersonalLeaveHistroy(String empID);
 	public List<LeaveDetail> FindAllLeave();
-	public List<LeaveDetail> ListMaxLeavesList();
+	public List<LeaveDetail> ListPersonTookMaxLeave();
 }

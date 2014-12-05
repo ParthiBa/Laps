@@ -9,7 +9,7 @@ import javax.validation.constraints.*;
 @Table(name="employees")
 public class Employee {
 	@Id
-	@Column(name="EmployeeID")
+	@Column(name="employeeID")
 	private String employeeID;
 	@Basic
 	@NotNull
