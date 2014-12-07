@@ -1,6 +1,6 @@
 package com.team6.LapsApp.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -9,9 +9,9 @@ import javax.validation.constraints.*;
 @Table(name="employees")
 public class Employee {
 	@Id
-	@Column(name="EmployeeID")
+	@Column(name="employeeID")
 	private String employeeID;
-	@Basic
+
 	@NotNull
 	@Column(name="Employeename")
 	private String employeename;
@@ -27,6 +27,7 @@ public class Employee {
 	@NotNull
 	@Column(name="SupervisorID")
 	private String supervisorID;
+	
 	public String getEmployeeID() {
 		return employeeID;
 	}
@@ -64,6 +65,7 @@ public class Employee {
 		this.supervisorID = supervisorID;
 	}
 	
-	
-
+	public void findPersonalLeaves(String empid){
+		
+	}
 }

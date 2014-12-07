@@ -20,8 +20,14 @@ public class LeaveDetail implements Serializable {
 	private Date fromDate;
 	@Column(name="ToDate")
 	private Date toDate;
-	@Column(name="isFullDay")
-	private Boolean isFullDay;
+	@Column(name="NumberOfDays")
+	private Double NUmberOfDays;
+	public Double getNUmberOfDays() {
+		return NUmberOfDays;
+	}
+	public void setNUmberOfDays(Double nUmberOfDays) {
+		NUmberOfDays = nUmberOfDays;
+	}
 	@Column(name="leaveStatus")
 	private String leaveStatus;
 	@Column(name="workDissemination")
@@ -57,12 +63,6 @@ public class LeaveDetail implements Serializable {
 	}
 	public void setToDate(Date toDate) {
 		this.toDate = toDate;
-	}
-	public Boolean getIsFullDay() {
-		return isFullDay;
-	}
-	public void setIsFullDay(Boolean isFullDay) {
-		this.isFullDay = isFullDay;
 	}
 	public String getLeaveStatus() {
 		return leaveStatus;
