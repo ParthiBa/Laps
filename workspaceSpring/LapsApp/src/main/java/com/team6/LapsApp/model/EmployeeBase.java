@@ -36,12 +36,28 @@ public class EmployeeBase {
 	@Column(name="Password")
 	private String password;
 	
-	@OneToMany(cascade = CascadeType.ALL,mappedBy="m_manager", fetch = FetchType.EAGER)
-    private Set<LeaveDetail> m_personalLeaveHistory;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="m_emp", fetch = FetchType.EAGER)
+    public Set<LeaveDetail> m_personalLeaveHistory;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-    private Set<OTDetail> m_perosnalClaimHistory;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="m_empot", fetch = FetchType.EAGER)
+    public Set<OTDetail> m_perosnalClaimHistory;
 	
+	public Set<LeaveDetail> getM_personalLeaveHistory() {
+		return m_personalLeaveHistory;
+	}
+
+	public void setM_personalLeaveHistory(Set<LeaveDetail> m_personalLeaveHistory) {
+		this.m_personalLeaveHistory = m_personalLeaveHistory;
+	}
+
+	public Set<OTDetail> getM_perosnalClaimHistory() {
+		return m_perosnalClaimHistory;
+	}
+
+	public void setM_perosnalClaimHistory(Set<OTDetail> m_perosnalClaimHistory) {
+		this.m_perosnalClaimHistory = m_perosnalClaimHistory;
+	}
+
 	protected Set<LeaveDetail> getPersonalLeavesInternal() {
         if (this.m_personalLeaveHistory == null) {
             this.m_personalLeaveHistory = new HashSet<LeaveDetail>();

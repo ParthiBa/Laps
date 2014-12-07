@@ -18,9 +18,18 @@ public class OTDetail implements Serializable  {
 	private Boolean isFullDay;
 	@Column(name="IsApproved")
 	private Boolean isApproved;
+	
 	public String getEmployeeID() {
 		return employeeID;
 	}
+	@ManyToOne
+	@JoinColumn(name = "EmployeeID")
+    private Employee m_empot;
+	
+	@ManyToOne
+	@JoinColumn(name = "ManagerID")
+    private Manager m_manager;
+	
 	public void setEmployeeID(String employeeID) {
 		this.employeeID = employeeID;
 	}

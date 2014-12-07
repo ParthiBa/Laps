@@ -16,7 +16,7 @@ public class Manager extends EmployeeBase{
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="m_manager", fetch = FetchType.EAGER)
     private Set<LeaveDetail> m_leaveToApprove = null;
 	
-	@OneToMany(cascade = CascadeType.ALL)//, mappedBy="manager")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="m_manager", fetch = FetchType.EAGER)
     private Set<OTDetail> m_claimsToApprove = null;
 	
 	protected Set<LeaveDetail> getLeavesInternal() {

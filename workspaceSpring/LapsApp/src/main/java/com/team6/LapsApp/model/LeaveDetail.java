@@ -28,11 +28,21 @@ public class LeaveDetail implements Serializable {
 		this.m_manager = m_manager;
 	}
 	@ManyToOne
-    @JoinColumn(name = "employeeID")
+	@JoinColumn(name = "EmployeeID")
+    private Employee m_emp;
+	
+	@ManyToOne
+	@JoinColumn(name = "ManagerID")
     private Manager m_manager;
 	
 	@Column(name="NumberOfDays")
 	private Double NUmberOfDays;
+	public EmployeeBase getM_empbase() {
+		return m_emp;
+	}
+	public void setM_empbase(Employee m_emp) {
+		this.m_emp = m_emp;
+	}
 	public Double getNUmberOfDays() {
 		return NUmberOfDays;
 	}

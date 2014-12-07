@@ -20,7 +20,6 @@ public interface LeaveApplicationService {
 	
     public void ApplyLeave(LeaveDetail ld);
     public void ApplyClaim(String empID);
-    List<LeaveDetail> FindPersonalLeaves(String empid);
     public Employee findById(String id);
     
     //Admin
