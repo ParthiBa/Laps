@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.team6.LapsApp.model.Employee;
-import com.team6.LapsApp.service.EmployeeService;
+import com.team6.LapsApp.service.LeaveApplicationService;
 
 /**
  * Handles requests for the application home page.
@@ -24,7 +24,7 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@Autowired
-	private EmployeeService ers ;
+	private LeaveApplicationService ers ;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -36,13 +36,13 @@ public class HomeController {
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		Employee s = null;
 		String formattedDate = dateFormat.format(date);
-		try{
+		/*try{
 			s = ers.findById("E01");
 		}
 		catch(Exception e){
 		e.printStackTrace();
-		}
-		model.addAttribute("serverTime",s.getEmployeename());
+		}*/
+		//model.addAttribute("serverTime",s.getEmployeename());
 		
 		return "home";
 	}

@@ -16,9 +16,9 @@ public interface SpringLeaveDetailsJpa extends LeaveDetailsRepository, JpaReposi
     @Query("SELECT s FROM LeaveDetail s WHERE LOWER(s.employeeID) = LOWER(:empID)")
     List<LeaveDetail> findPersonalLeaveHistory(@Param("empID") String empID);
 	
-	@Override
-    @Query("SELECT s FROM LeaveDetail s")
-	List<LeaveDetail> FindAllLeave();
+	/*@Override
+    @Query("SELECT s FROM LeaveDetail s where s.")
+	List<LeaveDetail> FindLeaveApplicationForApproval(@Param("empid") String empID);*/
 	
 	@Override
     @Query("SELECT s FROM LeaveDetail s group by s.employeeID")

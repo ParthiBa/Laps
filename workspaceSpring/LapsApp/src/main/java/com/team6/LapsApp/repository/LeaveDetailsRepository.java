@@ -7,6 +7,7 @@ import com.team6.LapsApp.model.*;
 public interface LeaveDetailsRepository {
 	
 	List<LeaveDetail> findPersonalLeaveHistory(String empID);
-	List<LeaveDetail> FindAllLeave();
+	/*List<LeaveDetail> FindLeaveApplicationForApproval(String empID);*/
 	List<LeaveDetail> ListPersonTookMaxLeave();
+	void save(LeaveDetail ld);
 }

@@ -8,7 +8,11 @@
 <h1>
 	Hello world!  
 </h1>
+<a href="${pageContext.request.contextPath}/InitFindEmployee.html">List Max Leave List</a><br/>
 <a href="${pageContext.request.contextPath}/employee/InitFindEmployee.html">List Max Leave List</a><br/>
+<a href="${pageContext.request.contextPath}/employee/InitFindEmployee.html">List Max Leave List</a><br/>
+<a href="${pageContext.request.contextPath}/manager/InitManagerWindow.html">Manager Home Page</a><br/>
+<a href="${pageContext.request.contextPath}/employee/employeeForm.html">Login</a><br/>
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>

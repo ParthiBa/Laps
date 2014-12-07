@@ -13,23 +13,6 @@
 <title>Student List page</title>
 </head>
 <body>
-<%-- <c:forEach var="Employee" items="${Employee}"> --%>
-<%-- </c:forEach> --%>
-<spring:url value="/employee/process.html" var="formUrl"/>
-    <form:form modelAttribute="employee" action="${fn:escapeXml(formUrl)}" method="get" class="form-horizontal"
-               id="search-owner-form">
-        <fieldset>
-            <div>
-                <label class="control-label">Last name </label>
-                <form:input path="employeeID" size="30" maxlength="80"/>
-            </div>
-            <div class="form-actions">
-                <button type="submit">Find Owner</button>
-            </div>
-            <c:forEach var="LeaveDetail" items="${LeaveDetailList}">
-            ${LeaveDetail.employeeID}
-            </c:forEach>
-        </fieldset>
-    </form:form>
+<a href="newLeave.html">Apply Leave</a><br/>
 </body>
 </html>

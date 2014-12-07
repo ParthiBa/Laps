@@ -20,6 +20,17 @@ public class LeaveDetail implements Serializable {
 	private Date fromDate;
 	@Column(name="ToDate")
 	private Date toDate;
+	
+	public Manager getM_manager() {
+		return m_manager;
+	}
+	public void setM_manager(Manager m_manager) {
+		this.m_manager = m_manager;
+	}
+	@ManyToOne
+    @JoinColumn(name = "employeeID")
+    private Manager m_manager;
+	
 	@Column(name="NumberOfDays")
 	private Double NUmberOfDays;
 	public Double getNUmberOfDays() {
