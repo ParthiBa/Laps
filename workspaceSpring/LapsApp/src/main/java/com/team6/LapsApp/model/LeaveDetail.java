@@ -3,7 +3,15 @@ package com.team6.LapsApp.model;
 import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+import javax.persistence.Table;
+
 @Entity
 @Table (name="leaveDetails")
 public class LeaveDetail implements Serializable {
@@ -17,11 +25,11 @@ public class LeaveDetail implements Serializable {
 	 * 
 	 */
 	@EmbeddedId
-	private LeaveDetailCompositeID id;
+	private LeaveDetailCompositeID id = null;
 	
 	@Column(name="RoleID")
 	private String roleID;
-    @Basic
+   
 	@Column(name="LeaveTypeID")
 	private String leaveTypeID;
     
@@ -46,7 +54,8 @@ public class LeaveDetail implements Serializable {
 	private String contactDetail;
 	
 	public LeaveDetail() {
-		this.id = new LeaveDetailCompositeID();
+		if(id == null)
+			this.id = new LeaveDetailCompositeID();
 	}
 	public LeaveDetail(String EmpID, Date date) {
         this.id = new LeaveDetailCompositeID(EmpID, date);

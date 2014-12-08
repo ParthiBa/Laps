@@ -15,7 +15,7 @@ public class OTDetail implements Serializable {
 	private static final long serialVersionUID = 1856669704833568101L;
 
 	@EmbeddedId
-	public OTDetailsCompositeID m_itID;
+	public OTDetailsCompositeID m_itID = null;
 
 	@Column(name = "IsFullDay")
 	private Boolean isFullDay;
@@ -73,7 +73,8 @@ public class OTDetail implements Serializable {
 	private Manager m_manager;
 
 	public OTDetail() {
-		this.m_itID = new OTDetailsCompositeID();
+		if(m_itID == null)
+			this.m_itID = new OTDetailsCompositeID();
 	}
 
 	public OTDetail(String EmpID, Date date) {
