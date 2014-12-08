@@ -14,6 +14,8 @@
 <body>
 <label>Welcome ${manager.employeename} </label>
 <c:forEach var="LeaveDetail" items="${manager.m_leaveToApprove}">
+ <c:choose>
+   <c:when test="${(LeaveDetail.leaveStatus == 'Applied')}">
    <table style="width:600px;">
        <tr>
            <td valign="top" style="width: 120px;">
@@ -34,6 +36,8 @@
            </td>
        </tr>
    </table>
+   </c:when>
+ </c:choose>
 </c:forEach>
 </body>
 </html>

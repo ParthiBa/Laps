@@ -3,15 +3,7 @@ package com.team6.LapsApp.model;
 import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 @Entity
 @Table (name="leaveDetails")
 public class LeaveDetail implements Serializable {
@@ -25,24 +17,27 @@ public class LeaveDetail implements Serializable {
 	 * 
 	 */
 	@EmbeddedId
-	private LeaveDetailCompositeID id = null;
+	private LeaveDetailCompositeID id;
 	
 	@Column(name="RoleID")
 	private String roleID;
-   
+    @Basic
 	@Column(name="LeaveTypeID")
 	private String leaveTypeID;
     
 	@Column(name="ToDate")
 	private Date toDate;
+	
 	@ManyToOne
 	@JoinColumn(name = "EmployeeID")
-	@MapsId("employeeID")
+	@MapsId("id.employeeID")
     private Employee m_emp;
+	
 	@ManyToOne
 	@JoinColumn(name = "ManagerID")
-	@MapsId("employeeID")
+	@MapsId("id.employeeID")
     private Manager m_manager;
+	
 	@Column(name="NumberOfDays")
 	private Double NUmberOfDays;
 	@Column(name="leaveStatus")
@@ -54,8 +49,7 @@ public class LeaveDetail implements Serializable {
 	private String contactDetail;
 	
 	public LeaveDetail() {
-		if(id == null)
-			this.id = new LeaveDetailCompositeID();
+		this.id = new LeaveDetailCompositeID();
 	}
 	public LeaveDetail(String EmpID, Date date) {
         this.id = new LeaveDetailCompositeID(EmpID, date);

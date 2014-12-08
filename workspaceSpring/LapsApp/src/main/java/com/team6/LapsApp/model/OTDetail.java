@@ -24,7 +24,7 @@ public class OTDetail implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "EmployeeID")
-	@MapsId("employeeID")
+	@MapsId("m_itID.employeeID")
 	private Employee m_empot;
 
 	public OTDetailsCompositeID getM_itID() {
@@ -69,7 +69,7 @@ public class OTDetail implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "ManagerID")
-	@MapsId("employeeID")
+	@MapsId("m_itID.employeeID")
 	private Manager m_manager;
 
 	public OTDetail() {

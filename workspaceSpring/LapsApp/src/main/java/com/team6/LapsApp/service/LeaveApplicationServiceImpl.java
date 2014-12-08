@@ -99,7 +99,7 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 		ldlocal.setFromDate(date1);
 		ldlocal.setToDate(date2);
 		ldlocal.setNUmberOfDays(1.0);
-		ldlocal.setLeaveStatus("R");
+		ldlocal.setLeaveStatus("Applied");
 		ldlocal.setWorkDissemination("E02");
 		m_leavedetailscrud.saveAndFlush(ldlocal);
 	}
