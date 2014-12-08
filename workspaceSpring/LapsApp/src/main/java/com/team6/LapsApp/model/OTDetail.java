@@ -4,52 +4,79 @@ import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.*;
-@Entity
-@Table(name="OTDetails")
-public class OTDetail implements Serializable  {
 
-	@Id
-	@Column(name="EmployeeID")
-	private String employeeID;
-	@Id
-	@Column(name="OTWorkedDate")
-	private Date otWorkedDate;
-	@Column(name="IsFullDay")
+@Entity
+@Table(name = "OTDetails")
+public class OTDetail implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1856669704833568101L;
+
+	@EmbeddedId
+	public OTDetailsCompositeID m_itID;
+
+	@Column(name = "IsFullDay")
 	private Boolean isFullDay;
-	@Column(name="IsApproved")
+	@Column(name = "IsApproved")
 	private Boolean isApproved;
-	
-	public String getEmployeeID() {
-		return employeeID;
-	}
+
 	@ManyToOne
 	@JoinColumn(name = "EmployeeID")
-    private Employee m_empot;
-	
-	@ManyToOne
-	@JoinColumn(name = "ManagerID")
-    private Manager m_manager;
-	
-	public void setEmployeeID(String employeeID) {
-		this.employeeID = employeeID;
+	@MapsId("employeeID")
+	private Employee m_empot;
+
+	public OTDetailsCompositeID getM_itID() {
+		return m_itID;
 	}
-	public Date getOtWorkedDate() {
-		return otWorkedDate;
+
+	public void setM_itID(OTDetailsCompositeID m_itID) {
+		this.m_itID = m_itID;
 	}
-	public void setOtWorkedDate(Date otWorkedDate) {
-		this.otWorkedDate = otWorkedDate;
-	}
+
 	public Boolean getIsFullDay() {
 		return isFullDay;
 	}
+
 	public void setIsFullDay(Boolean isFullDay) {
 		this.isFullDay = isFullDay;
 	}
+
 	public Boolean getIsApproved() {
 		return isApproved;
 	}
+
 	public void setIsApproved(Boolean isApproved) {
 		this.isApproved = isApproved;
 	}
-	
+
+	public Employee getM_empot() {
+		return m_empot;
+	}
+
+	public void setM_empot(Employee m_empot) {
+		this.m_empot = m_empot;
+	}
+
+	public Manager getM_manager() {
+		return m_manager;
+	}
+
+	public void setM_manager(Manager m_manager) {
+		this.m_manager = m_manager;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "ManagerID")
+	@MapsId("employeeID")
+	private Manager m_manager;
+
+	public OTDetail() {
+		this.m_itID = new OTDetailsCompositeID();
+	}
+
+	public OTDetail(String EmpID, Date date) {
+		this.m_itID = new OTDetailsCompositeID(EmpID, date);
+	}
 }

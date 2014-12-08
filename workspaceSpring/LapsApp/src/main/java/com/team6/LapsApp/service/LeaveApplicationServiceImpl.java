@@ -14,6 +14,7 @@ import com.team6.LapsApp.model.Employee;
 import com.team6.LapsApp.model.LeaveDetail;
 import com.team6.LapsApp.model.Manager;
 import com.team6.LapsApp.model.OTDetail;
+import com.team6.LapsApp.repository.OTDetailsCRUDRepository;
 import com.team6.LapsApp.repository.leavedetailsCRUDRepository;
 import com.team6.LapsApp.repository.LeaveDetailsRepository;
 import com.team6.LapsApp.repository.ManagerRepository;
@@ -30,12 +31,13 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 	private leavedetailsCRUDRepository m_leavedetailscrud;
 	@Resource
 	private ManagerRepository m_managerRepository;
+	@Resource
+	private OTDetailsCRUDRepository m_otRepository;
 	
 	@Override
 	@Transactional(readOnly = true)
 	public List<LeaveDetail> ListPersonTookMaxLeave() {
 		List<LeaveDetail> result = null;
-		result = m_leaveRepository.ListPersonTookMaxLeave();
 		return result;
 	}
 
@@ -83,7 +85,7 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 	@Transactional
 	public void ApplyLeave(LeaveDetail ld) {
 		LeaveDetail ldlocal = ld;
-		ldlocal.setEmployeeID("E01");
+		ldlocal.setEmployeeID("E02");
 		ldlocal.setRoleID("E");
 		ldlocal.setLeaveTypeID("AN");
 		Calendar calendar = Calendar.getInstance();
@@ -97,16 +99,27 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 		ldlocal.setFromDate(date1);
 		ldlocal.setToDate(date2);
 		ldlocal.setNUmberOfDays(1.0);
-		ldlocal.setLeaveStatus("A");
+		ldlocal.setLeaveStatus("R");
 		ldlocal.setWorkDissemination("E02");
 		m_leavedetailscrud.saveAndFlush(ldlocal);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public void ApplyClaim(String empID) {
-		// TODO Auto-generated method stub
-		
+	public void ApplyClaim(OTDetail ot) {
+		OTDetail localot = ot;
+		localot.m_itID.setEmployeeID("E02");
+		localot.setIsApproved(false);
+		localot.setIsFullDay(true);
+		Calendar calendar = Calendar.getInstance();
+		// get a java date (java.util.Date) from the Calendar instance.
+		// this java date will represent the current date, or "now".
+		java.util.Date currentDate = calendar.getTime();
+		 
+		// now, create a java.sql.Date from the java.util.Date
+		java.sql.Date date1 = new java.sql.Date(currentDate.getTime());
+		localot.m_itID.setM_otWorkedDate(date1);
+		m_otRepository.saveAndFlush(ot);
 	}
 
 	@Override

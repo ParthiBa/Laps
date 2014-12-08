@@ -19,7 +19,7 @@ public interface LeaveApplicationService {
 	//employess
 	
     public void ApplyLeave(LeaveDetail ld);
-    public void ApplyClaim(String empID);
+    public void ApplyClaim(OTDetail ot);
     public Employee findById(String id);
     
     //Admin

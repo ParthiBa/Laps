@@ -14,5 +14,6 @@
 </head>
 <body>
 <a href="newLeave.html">Apply Leave</a><br/>
+<a href="newClaim.html">Apply Claim</a><br/>
 </body>
 </html>

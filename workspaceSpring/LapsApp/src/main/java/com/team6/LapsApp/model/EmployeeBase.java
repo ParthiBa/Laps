@@ -64,6 +64,13 @@ public class EmployeeBase {
         }
         return this.m_personalLeaveHistory;
     }
+	
+	protected Set<OTDetail> getPersonalClaimsInternal() {
+        if (this.m_perosnalClaimHistory == null) {
+            this.m_perosnalClaimHistory = new HashSet<OTDetail>();
+        }
+        return this.m_perosnalClaimHistory;
+    }
 
     public List<LeaveDetail> getPersonalLeave() {
         List<LeaveDetail> sortedleaves = new ArrayList<LeaveDetail>(getPersonalLeavesInternal());
@@ -73,6 +80,10 @@ public class EmployeeBase {
 
     public void addPersonalLeaves(LeaveDetail ld) {
     	getPersonalLeavesInternal().add(ld);
+    }
+    
+    public void addPersonalclaims(OTDetail ot) {
+    	getPersonalClaimsInternal().add(ot);
     }
     
     protected Set<OTDetail> getOTListInternal() {

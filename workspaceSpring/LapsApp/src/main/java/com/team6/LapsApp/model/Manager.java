@@ -26,6 +26,13 @@ public class Manager extends EmployeeBase{
         return this.m_leaveToApprove;
     }
 	
+	protected Set<OTDetail> getClaimsInternal() {
+        if (this.m_claimsToApprove == null) {
+            this.m_claimsToApprove = new HashSet<OTDetail>();
+        }
+        return this.m_claimsToApprove;
+    }
+	
 	public Set<LeaveDetail> getM_leaveToApprove() {
 		return m_leaveToApprove;
 	}
@@ -49,5 +56,10 @@ public class Manager extends EmployeeBase{
 	public void addleavestoApprove(LeaveDetail ld) {
 		getLeavesInternal().add(ld);
 		ld.setM_manager(this);
+	}
+	
+	public void addClaimtoApprove(OTDetail ot) {
+		getClaimsInternal().add(ot);
+		ot.setM_manager(this);
 	}
 }

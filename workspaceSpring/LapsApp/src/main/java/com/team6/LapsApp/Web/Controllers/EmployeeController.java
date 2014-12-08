@@ -1,7 +1,5 @@
 package com.team6.LapsApp.Web.Controllers;
 
-import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -9,17 +7,18 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.team6.LapsApp.model.*;
+import com.team6.LapsApp.model.Employee;
+import com.team6.LapsApp.model.LeaveDetail;
+import com.team6.LapsApp.model.Manager;
+import com.team6.LapsApp.model.OTDetail;
 import com.team6.LapsApp.service.LeaveApplicationService;
 
 @Controller
@@ -63,8 +62,30 @@ public class EmployeeController {
 	    status.setComplete();
 	    return "redirect:/employee/GetmaxleavePerson/E01";
     }
+    
+    @RequestMapping(value = "/newClaim", method = RequestMethod.GET)
+    public String initClaimCreationForm(@Param ("EmployeeID") String empid,Map<String, Object> model) {
+        OTDetail ot = new OTDetail();
+        Employee e = new Employee();
+        e.setEmployeeID("E01");
+        model.put("employeelogedin", e);
+        model.put("claim", ot);
+        return "ClaimApplication";
+    }
 
-    @RequestMapping(value = "/GetmaxleavePerson/{empid}", method = RequestMethod.GET)
+    @RequestMapping(value = "{EmployeeID}/newClaim", method = RequestMethod.POST)
+    public String processClaimCreationForm(@Param ("EmployeeID") String EmployeeID,@Valid OTDetail ot, BindingResult result, SessionStatus status) {
+    	Manager m = this.m_Service.findManagerByID(ot.getM_manager().getEmployeeID());
+		m.addClaimtoApprove(ot);
+		Employee e = this.m_Service.findById("E01");
+		e.addPersonalclaims(ot);
+		ot.setM_empot(e);
+	    this.m_Service.ApplyClaim(ot);
+	    status.setComplete();
+	    return "redirect:/employee/GetPersonalLeaveHIstory/E01";
+    }
+
+    @RequestMapping(value = "/GetPersonalLeaveHIstory/{empid}", method = RequestMethod.GET)
 	public ModelAndView GetPersonalLeaveHIstory(@Param ("empid") String empid) {
 		ModelAndView mav = new ModelAndView("EmployeeOptions");
 		return mav;
