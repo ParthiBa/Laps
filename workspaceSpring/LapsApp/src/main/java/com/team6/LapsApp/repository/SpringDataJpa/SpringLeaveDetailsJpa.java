@@ -13,7 +13,7 @@ import com.team6.LapsApp.model.LeaveDetail;
 public interface SpringLeaveDetailsJpa extends LeaveDetailsRepository, JpaRepository<LeaveDetail, String> {
 	
 	@Override
-    @Query("SELECT s FROM LeaveDetail s WHERE LOWER(s.employeeID) = LOWER(:empID)")
+    @Query("SELECT s FROM LeaveDetail s WHERE LOWER(s.id.employeeID) = LOWER(:empID)")
     List<LeaveDetail> findPersonalLeaveHistory(@Param("empID") String empID);
 	
 	/*@Override
@@ -21,6 +21,6 @@ public interface SpringLeaveDetailsJpa extends LeaveDetailsRepository, JpaReposi
 	List<LeaveDetail> FindLeaveApplicationForApproval(@Param("empid") String empID);*/
 	
 	@Override
-    @Query("SELECT s FROM LeaveDetail s group by s.employeeID")
+    @Query("SELECT s FROM LeaveDetail s group by s.id.employeeID")
 	List<LeaveDetail> ListPersonTookMaxLeave();
 }

@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Manager extends EmployeeBase{
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="m_manager", fetch = FetchType.EAGER)
-    private Set<LeaveDetail> m_leaveToApprove = null;
+    public Set<LeaveDetail> m_leaveToApprove = null;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="m_manager", fetch = FetchType.EAGER)
     private Set<OTDetail> m_claimsToApprove = null;
@@ -26,6 +26,22 @@ public class Manager extends EmployeeBase{
         return this.m_leaveToApprove;
     }
 	
+	public Set<LeaveDetail> getM_leaveToApprove() {
+		return m_leaveToApprove;
+	}
+
+	public void setM_leaveToApprove(Set<LeaveDetail> m_leaveToApprove) {
+		this.m_leaveToApprove = m_leaveToApprove;
+	}
+
+	public Set<OTDetail> getM_claimsToApprove() {
+		return m_claimsToApprove;
+	}
+
+	public void setM_claimsToApprove(Set<OTDetail> m_claimsToApprove) {
+		this.m_claimsToApprove = m_claimsToApprove;
+	}
+
 	protected void setLeavesInternal(Set<LeaveDetail> ld) {
         this.m_leaveToApprove = ld;
     }

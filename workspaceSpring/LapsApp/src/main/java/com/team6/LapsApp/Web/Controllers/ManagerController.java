@@ -30,21 +30,22 @@ public class ManagerController {
 	
 	@RequestMapping(value = "/InitManagerWindow", method = RequestMethod.GET)
 	public String InitManagerWindow(Map<String, Object> model) {
-		Manager manager = new Manager();
-		manager.setEmployeeID("JN");//Take this detail from login screen later
-		//m_Service.findById(manager.getEmployeeID());
-		manager = (Manager) m_Service.findManagerByID("E01");
-	    model.put("manager", manager);
+		
         return "ManagerHomePage";
 	}
 	
 	@RequestMapping(value = "/InitManagerLeaveApproveWindow", method = RequestMethod.GET)
 	public String InitManagerLeaveApproveWindow(Map<String, Object> model) {
+		Manager manager = new Manager();
+		manager.setEmployeeID("JN");//Take this detail from login screen later
+		manager = (Manager) m_Service.findManagerByID("M01");
+	    model.put("manager", manager);
         return "Manager/LeaveToApprove";
 	}
 	
 	@RequestMapping(value = "/InitManagerClaimApproveWindow", method = RequestMethod.GET)
 	public String InitManagerClaimApproveWindow(Map<String, Object> model) {
+		Manager m = (Manager)model.get("manager");
         return "Manager/ClaimToApprove";
 	}
 		

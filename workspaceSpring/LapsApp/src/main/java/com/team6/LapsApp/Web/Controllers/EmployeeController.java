@@ -54,10 +54,11 @@ public class EmployeeController {
 
     @RequestMapping(value = "{EmployeeID}/newLeave", method = RequestMethod.POST)
     public String processLeaveCreationForm(@Param ("EmployeeID") String EmployeeID,@Valid LeaveDetail ld, BindingResult result, SessionStatus status) {
-    	//Manager m = this.m_Service.findManagerByID(ld.getM_manager().getEmployeeID());
-		//m.addleavestoApprove(ld);
+    	Manager m = this.m_Service.findManagerByID(ld.getM_manager().getEmployeeID());
+		m.addleavestoApprove(ld);
 		Employee e = this.m_Service.findById("E01");
 		e.addPersonalLeaves(ld);
+		ld.setM_empbase(e);
 	    this.m_Service.ApplyLeave(ld);
 	    status.setComplete();
 	    return "redirect:/employee/GetmaxleavePerson/E01";
@@ -66,8 +67,6 @@ public class EmployeeController {
     @RequestMapping(value = "/GetmaxleavePerson/{empid}", method = RequestMethod.GET)
 	public ModelAndView GetPersonalLeaveHIstory(@Param ("empid") String empid) {
 		ModelAndView mav = new ModelAndView("EmployeeOptions");
-		List<LeaveDetail> List = m_Service.FindPersonalLeaves(empid);
-		mav.addObject("PersonalLeaves", List);
 		return mav;
 	}
 }

@@ -34,10 +34,6 @@
                 <form:input path="NUmberOfDays" size="30" maxlength="80"/>
             </div>
             <div>
-                <label class="control-label">From date</label>
-                <form:input path="fromDate"  name = "date" size="30" maxlength="80" value="14/12/07"/>
-            </div>
-            <div>
                 <label class="control-label">Approver ID</label>
                 <form:input path="m_manager.employeeID" size="30" maxlength="80" value="M01"/>
             </div>

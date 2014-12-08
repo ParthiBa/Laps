@@ -10,7 +10,7 @@ import com.team6.LapsApp.repository.employeeRepostitory;
 public interface SpringEmployeeJpa extends employeeRepostitory, Repository<Employee, String> {
 
 	@Override
-	@Query("SELECT DISTINCT s FROM Employee s WHERE s.employeeID=:empID")
+	@Query("SELECT DISTINCT s FROM Employee s WHERE s.id.employeeID=:empID")
 	public Employee findById(@Param("empID") String empID);
 	
 	/*@Override

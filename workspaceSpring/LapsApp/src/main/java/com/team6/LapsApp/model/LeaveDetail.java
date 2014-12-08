@@ -7,17 +7,39 @@ import javax.persistence.*;
 @Entity
 @Table (name="leaveDetails")
 public class LeaveDetail implements Serializable {
-	@Id
-	@Column(name="EmployeeID")
-	private String employeeID;
-	@Id
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@EmbeddedId
+	private LeaveDetailCompositeID id;
+	
+	public LeaveDetail() {
+		this.id = new LeaveDetailCompositeID();
+	}
+    public LeaveDetail(String EmpID, Date date) {
+        this.id = new LeaveDetailCompositeID(EmpID, date);
+    }
+    
+	public LeaveDetailCompositeID getId() {
+		return id;
+	}
+	public void setId(LeaveDetailCompositeID id) {
+		this.id = id;
+	}
+	public Employee getM_emp() {
+		return m_emp;
+	}
+	public void setM_emp(Employee m_emp) {
+		this.m_emp = m_emp;
+	}
 	@Column(name="RoleID")
 	private String roleID;
 	@Basic
 	@Column(name="LeaveTypeID")
 	private String leaveTypeID;
-	@Column(name="FromDate")
-	private Date fromDate;
+	
 	@Column(name="ToDate")
 	private Date toDate;
 	
@@ -29,10 +51,12 @@ public class LeaveDetail implements Serializable {
 	}
 	@ManyToOne
 	@JoinColumn(name = "EmployeeID")
+	@MapsId("employeeID")
     private Employee m_emp;
 	
 	@ManyToOne
 	@JoinColumn(name = "ManagerID")
+	@MapsId("employeeID")
     private Manager m_manager;
 	
 	@Column(name="NumberOfDays")
@@ -56,10 +80,10 @@ public class LeaveDetail implements Serializable {
 	@Column(name="ContactDetails")
 	private String contactDetail;
 	public String getEmployeeID() {
-		return employeeID;
+		return id.getEmployeeID();
 	}
 	public void setEmployeeID(String employeeID) {
-		this.employeeID = employeeID;
+		this.id.setEmployeeID(employeeID);
 	}
 	public String getRoleID() {
 		return roleID;
@@ -74,10 +98,10 @@ public class LeaveDetail implements Serializable {
 		this.leaveTypeID = leaveTypeID;
 	}
 	public Date getFromDate() {
-		return fromDate;
+		return id.getFromDate();
 	}
 	public void setFromDate(Date fromDate) {
-		this.fromDate = fromDate;
+		this.id.setFromDate(fromDate);
 	}
 	public Date getToDate() {
 		return toDate;
