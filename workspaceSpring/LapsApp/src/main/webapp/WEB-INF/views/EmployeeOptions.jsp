@@ -13,7 +13,7 @@
 <title>Student List page</title>
 </head>
 <body>
-<a href="newLeave.html">Apply Leave</a><br/>
-<a href="newClaim.html">Apply Claim</a><br/>
+<a href="${pageContext.request.contextPath}/employee/newLeave.html">Apply Leave</a><br/>
+<a href="${pageContext.request.contextPath}/employee/newClaim.html">Apply Claim</a><br/>
 </body>
 </html>

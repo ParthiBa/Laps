@@ -1,13 +1,15 @@
-package com.team6.LapsApp.Web.Controllers.Validator;
+package com.team6.LapsApp.service;
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class UserModel 
 {
 	private String EmpID;
 	
 	private String password;
-
-
-
+	
 	public String getPassword() {
 		return password;
 	}

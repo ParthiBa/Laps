@@ -8,14 +8,11 @@
 <h1>
 	Hello world!  
 </h1>
-<c:url var="login" value="/Login/loginEmp.html"/>
+<c:url var="loginEmp" value="/Login/loginEmp.html"/>
 <c:url var="logout" value="/Login/loginEmp.html"/>
-<a href="${login}">login</a>
+<c:url var="loginMrg" value="/Login/loginMngr.html"/>
+<a href="${loginEmp}">login as Staff</a>
+<a href="${loginMrg}">login as Manager</a>
 <a href="${logout}">logout</a>
-
-
-<a href="${pageContext.request.contextPath}/manager/InitManagerWindow.html">Manager Home Page</a><br/>
-<a href="${pageContext.request.contextPath}/employee/employeeForm.html">Login</a><br/>
-<P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>

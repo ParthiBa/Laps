@@ -22,17 +22,18 @@ import com.team6.LapsApp.repository.HolidayReposistory;
 import com.team6.LapsApp.repository.LeaveTypeRepository;
 import com.team6.LapsApp.repository.OTDetailsCRUDRepository;
 import com.team6.LapsApp.repository.RoleIDReposistory;
-import com.team6.LapsApp.repository.leavedetailsCRUDRepository;
+import com.team6.LapsApp.repository.SpringLeaveDetailsJpa;
+import com.team6.LapsApp.repository.StaffRepository;
 import com.team6.LapsApp.repository.ManagerRepository;
-import com.team6.LapsApp.repository.employeeRepostitory;
+
 
 @Service
 public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 
 	@Resource
-	private employeeRepostitory m_empRepository;
+	private StaffRepository m_empRepository;
 	@Resource
-	private leavedetailsCRUDRepository m_leavedetailscrud;
+	private SpringLeaveDetailsJpa m_leavedetailscrud;
 	@Resource
 	private ManagerRepository m_managerRepository;
 	@Resource

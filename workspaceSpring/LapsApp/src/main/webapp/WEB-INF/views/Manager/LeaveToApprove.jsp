@@ -25,15 +25,13 @@
         </td>
         <td>
 	        Status
-	        <form name="form" action="${pageContext.request.contextPath}/manager/approveorreject" method="post">
-				<textarea name="comment" placeholder="Leave a comment here" cols="7" rows="2" ></textarea>
-				<br/>
+	        <form action="${pageContext.request.contextPath}/manager/approveorreject" method="post">
 				<input type="hidden" name="Approved"/>
 				<input type="hidden" name="Rejected"/>
 				<input type="hidden" name="empid" value="${LeaveDetail.id.employeeID}"/>
 				<input type="hidden" name="date" value="${LeaveDetail.id.fromDate}"/>
-				<input name="btn" type="submit" value="Approve" onclick="{document.form.Approved.value=this.value;}"/>&nbsp;&nbsp;
-				<input name="btn" type ="submit" value="Reject" onclick="{document.form.Rejected.value=this.value;}"/>
+				<input type="submit" value="Approve" onclick="{document.form.Approved.value=this.value;}"/>&nbsp;&nbsp;
+				<input type="submit" value="Reject" onclick="{document.form.Rejected.value=this.value;}"/>
 			</form>
         </td>
         <td>

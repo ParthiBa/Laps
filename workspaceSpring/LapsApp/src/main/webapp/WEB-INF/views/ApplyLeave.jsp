@@ -43,68 +43,52 @@ $(function() {
 <h1>Apply Leave Information</h1>
 <spring:url value="/employee/${employeelogedin.employeeID}/newLeave.html" var="formUrl"/>
 <form:form method="POST" modelAttribute="leave" action="${fn:escapeXml(formUrl)}">
-<table>
-<tbody>
-	<tr>
-	  <td>Staff Name:</td>
-	   <td><form:input path="employeeID"/></td> 
-	</tr>
-	<tr>
-	   <td>Role ID:</td>
-	   <td><form:input path="roleID"/></td>
-	</tr>
-	<tr>
-	<td>Leave Type:</td>
-	  <td><form:select path="LeaveTypeID">
-	  <form:option value="-" label="select"/>
-	  <form:options items="${LeaveTypeNameList}" itemValue="leaveTypeID" itemLabel="leaveTypeName"></form:options> 
-	  </form:select>
-	  </td>
-	  <td><form:errors path="LeaveTypeID" cssStyle="color:red"></form:errors></td>	  
-	</tr>
-	<tr>
-	   <td>FromDate:</td>
-	   <td><form:input path="FromDate" class="date-picker" placeholder="dd/mm/yy"/></td>
-	   <td><form:errors path="FromDate" cssStyle="color:red"></form:errors></td>
-	</tr>
-	<tr>
-	   <td>ToDate:</td>
-	   <td><form:input path="ToDate" class="date-picker1" placeholder="dd/mm/yy"/></td>
-	   <td><form:errors path="ToDate" cssStyle="color:red"></form:errors></td>
-    </tr>
-    <!-- <tr>
-       <td>NoOfDays:</td>
-       <td><input type="text" readonly disabled/></td>      
-    </tr> -->
-    <tr>
-        <td>Is Full Day:</td>
-        <td><form:checkbox path="isFullDay"/>        
-    </tr>
-   <!--  <tr>
-       <td>Reason:</td>
-       <td><input type="text"/></td>       
-    </tr> -->
-    <tr>
-    	<td>LeaveStatus:</td>
-    	<td><form:select path="leaveStatus" items="${LeaveStatusList}" /></td>
-    <tr>
-      <td>WorkDissemination:</td>
-      <td><form:input path="workDissemination"/></td>
-     <!-- <td><form:errors path="workDissemination" cssStyle="color:red"></form:errors></td> -->
-    </tr>	   
-    <tr>
-      <td>Contact Details:</td>
-      <td><form:input path="contactDetail"/></td>     
-    </tr>
-    <tr>
-    <td></td>
-     <td><input type="submit" value="create"/><input type="button" value="Cancel"/></td>    
-     
-    </tr>
-	
-    
- </tbody>   
-</table>
-</form:form>
+<fieldset>
+            <div>
+                <label class="control-label">Staff Name: </label>
+                <form:input path="employeeID" size="30" maxlength="80" value="E01"/>
+            </div>
+            <div>
+                <form:select path="LeaveTypeID">
+	  				<form:options items="${LeaveTypeNameList}" itemValue="leaveTypeID" itemLabel="leaveTypeName"></form:options> 
+			  		</form:select>
+            </div>
+            <div>
+                <label class="control-label">FromDate</label>
+                <form:input path="FromDate" class="date-picker" placeholder="dd/mm/yy"/>
+			    <form:errors path="FromDate" cssStyle="color:red"></form:errors>
+            </div>
+            <div>
+                <label class="control-label">ToDate</label>
+                <form:input path="ToDate" class="date-picker1" placeholder="dd/mm/yy"/>
+			    <form:errors path="ToDate" cssStyle="color:red"></form:errors>
+            </div>
+            <div>
+                <label class="control-label">Number Of Day(s):</label>
+                <form:input path="NUmberOfDays" size="30" maxlength="80" value="1.0"/>
+            </div>
+            <div>
+                <label class="control-label">Approver ID</label>
+                <form:input path="m_manager.employeeID" size="30" maxlength="80" value="M01"/>
+            </div>
+            <div>
+		    	<label class="control-label">LeaveStatus:</label>
+		    	<form:select path="LeaveTypeID">
+	  				<form:options items="${LeaveStatusList}"></form:options> 
+		  		</form:select>
+           </div>
+		   <div>
+		    	<label class="control-label">workDissemination"/></label>
+		     	<form:input path="workDissemination" size="30" maxlength="80" value="E01"/>
+		   </div>	   
+		   <div>
+                <label class="control-label">Contact Details:</label>
+                <form:input path="contactDetail" size="30" maxlength="80"/>
+           </div>
+           <div class="form-actions">
+                <button type="submit">Apply Leave</button>
+           </div>
+    </fieldset>
+  </form:form>
 </body>
 </html>

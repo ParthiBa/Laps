@@ -27,6 +27,14 @@ public class OTDetail implements Serializable {
 	@MapsId("m_itID.employeeID")
 	private Employee m_empot;
 
+	public String getEmployeeID() {
+		return m_itID.getEmployeeID();
+	}
+	
+	public void setEmployeeID(String employeeID) {
+		this.m_itID.setEmployeeID(employeeID);
+	}
+	
 	public OTDetailsCompositeID getM_itID() {
 		return m_itID;
 	}

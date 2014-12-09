@@ -16,8 +16,6 @@ public interface LeaveApplicationService {
 	
 	//Manager
 	public Manager findManagerByID(String empid); 
-	/*public List<LeaveDetail> FindLeaveApplicationForApproval(String empid);
-	public List<OTDetail>FindClaimApplicationForApproval(String empid);*/
 	public List<LeaveDetail> ListPersonTookMaxLeave();
 		
 	//employess
@@ -33,7 +31,6 @@ public interface LeaveApplicationService {
     public void UpdateEmployeeID(Employee e);
     public Employee DeleteEmployeeID(String empid);
     public void CreateLeaveType(LeaveType lt);
-    public List<LeaveType> GetAllLeaveTypes();
     public LeaveType DeleteLeaveType(String lt);
     public void CreateNewRole(EmployeeRole er);
     public void CreateHoliday(Holiday hl);
@@ -41,6 +38,7 @@ public interface LeaveApplicationService {
     
     
     //General
+    public List<LeaveType> GetAllLeaveTypes();
     public LeaveDetail GetLeaveById(LeaveDetailCompositeID key);
     public void LeaveDetailsUpdate(LeaveDetail ld);
     public List<Employee> SearchEmpbyName(String na);

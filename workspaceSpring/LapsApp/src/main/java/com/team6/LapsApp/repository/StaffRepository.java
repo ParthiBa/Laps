@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.team6.LapsApp.model.*;
 
-public interface employeeRepostitory extends CrudRepository<Employee,String>{
+public interface StaffRepository extends CrudRepository<Employee,String>{
 	
 	@Query("SELECT e FROM Employee e WHERE e.roleID <> 'A' AND e.roleID <> 'E' ")
 	List<Employee> ListOfSuperVisor();

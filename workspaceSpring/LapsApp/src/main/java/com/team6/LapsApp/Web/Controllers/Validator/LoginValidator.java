@@ -3,7 +3,7 @@ package com.team6.LapsApp.Web.Controllers.Validator;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import com.team6.LapsApp.Web.Controllers.Validator.UserModel;
+import com.team6.LapsApp.service.UserModel;
 
 public class LoginValidator implements Validator {
 
