@@ -7,12 +7,12 @@ public class Staff extends Employee{
 
 	@NotNull
 	@Column(name="SupervisorID")
-	private String supervisorID;
+	private String SuperVisorID;
 	
 	public String getSupervisorID() {
-		return supervisorID;
+		return SuperVisorID;
 	}
 	public void setSupervisorID(String supervisorID) {
-		this.supervisorID = supervisorID;
+		this.SuperVisorID = supervisorID;
 	}
 }

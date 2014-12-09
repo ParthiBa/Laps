@@ -44,16 +44,16 @@ public class AdminController {
 	@InitBinder
 	private void initBinder(WebDataBinder binder) {
 		 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		    dateFormat.setLenient(true);
-		    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
-		binder.setValidator(employeeValidator);
+		 dateFormat.setLenient(true);
+		 binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+		 binder.setValidator(employeeValidator);
 	}
 	
 	@RequestMapping(value ="/CreateEmployee", method=RequestMethod.GET)
 	public ModelAndView createEmployeepage()
 	{
 	
-		ModelAndView mav= new ModelAndView("CreateOrUpdateEmployee","employee",new Employee());
+		ModelAndView mav= new ModelAndView("Admin/CreateOrUpdateEmployee","employee",new Employee());
 		  mav.addObject("roleList", roleRepo.findAll());
 		  mav.addObject("SupervisorList",empService.ListOfSuperVisor());
 		return mav;
@@ -67,7 +67,7 @@ public class AdminController {
 		if (( result).hasErrors()){
 		String	message="error";
 		rdtAtte.addFlashAttribute("message", message);
-			return new ModelAndView("CreateOrUpdateEmployee");
+			return new ModelAndView("Admin/CreateOrUpdateEmployee");
 	  
 		}
 		ModelAndView mav = new ModelAndView();
@@ -94,7 +94,7 @@ public class AdminController {
 	@RequestMapping(value="/SearchEmployee",method=RequestMethod.POST)
 	public ModelAndView returnSearchEmployee( Employee emp,Map<String, Object> model)
 	{
-		ModelAndView mav = new ModelAndView("SearchEmployee");
+		ModelAndView mav = new ModelAndView("More Options/SearchEmployee");
 
 		List<Employee> list=empService.SearchEmpbyName( emp.getEmployeename());
 		mav.addObject("employeeList", list);
@@ -108,7 +108,7 @@ public class AdminController {
 //        model.addAttribute(owner);
 //        return "owners/createOrUpdateOwnerForm";
     	Employee e = empService.findEmployee(employeeID);
-		ModelAndView mav= new ModelAndView("CreateOrUpdateEmployee","employee",e);
+		ModelAndView mav= new ModelAndView("Admin/CreateOrUpdateEmployee","employee",e);
 		String s="edit";
 		mav.addObject("actiont", s);
 		  mav.addObject("roleList", roleRepo.findAll());
@@ -119,7 +119,7 @@ public class AdminController {
     @RequestMapping(value = "/edit/{employeeID}", method = RequestMethod.PUT)
     public String processUpdateOwnerForm(Map<String, Object> model,@Valid Employee emp, BindingResult result, SessionStatus status) {
         if (result.hasErrors()) {
-            return "createOrUpdateOwnerForm";
+            return "Admin/createOrUpdateOwnerForm";
         } else {
            
             status.setComplete();

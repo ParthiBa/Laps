@@ -173,7 +173,8 @@ public class EmployeeController {
         else if (ls.getRoleID().equalsIgnoreCase("E") == true)
         	e = new Employee();
         
-        e.setEmployeeID(ls.getEmpiD());
+        e = m_Service.findEmployee(ls.getEmpiD());
+        
         List<LeaveType> LeaveTypeNameList = m_Service.GetAllLeaveTypes();
         List<String> LeaveStatusList = new ArrayList<String>();
         LeaveStatusList.add("Appplied");
@@ -213,7 +214,7 @@ public class EmployeeController {
         else if (ls.getRoleID().equalsIgnoreCase("E") == true)
         	e = new Employee();
         
-        e.setEmployeeID(ls.getEmpiD());
+        e = m_Service.findEmployee(ls.getEmpiD());
         model.put("employeelogedin", e);
         model.put("claim", ot);
         return "ClaimOverTime";
@@ -231,11 +232,20 @@ public class EmployeeController {
 	    return "EmployeeOptions";
     }
 
-    @RequestMapping(value = "/GetPersonalLeaveHIstory/{empid}", method = RequestMethod.GET)
+    @RequestMapping(value = "/GetPersonalLeaveHIstory", method = RequestMethod.GET)
 	public String GetPersonalLeaveHIstory(@Param ("empid") String empid,
-													Map<String, Object> model) {
-        Employee e = new Employee();
-        e.setEmployeeID("E01");
+													Map<String, Object> model,
+													HttpSession session) {
+    	LoginSess ls = (LoginSess)session.getAttribute("login");
+        
+        EmployeeBase e = null;
+        if(ls.getRoleID().equalsIgnoreCase("M") == true)
+        	e = new Manager();
+        else if (ls.getRoleID().equalsIgnoreCase("E") == true)
+        	e = new Employee();
+        
+        e = m_Service.findEmployee(ls.getEmpiD());
+        
         model.put("employeelogedin", e);
 		return "PersonalLeaves";
 	}

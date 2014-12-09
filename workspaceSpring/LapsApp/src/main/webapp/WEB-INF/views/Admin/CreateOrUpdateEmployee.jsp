@@ -44,13 +44,13 @@ $(function() {
   
  </tr>
  <tr><td>EmployeeName:</td>
-   <td><form:input path="employeename" /></td><form:errors path="employeename" cssStyle="color: red;"/></tr>
+   <td><form:input path="employeename" value="E99"/></td><form:errors path="employeename" cssStyle="color: red;"/></tr>
     <tr><td>DateOfBirth</td>
         <td><form:input path="dob" class="date-picker" placeholder="dd/mm/yy" /></td>
         <td><form:errors path="dob" cssStyle="color: red;"/></td>
     </tr>
     <tr><td>Password:</td>
-    <td><form:password path="password" />
+    <td><form:password path="password" value="E99"/>
 				</td>
 				<td><form:errors path="password" cssClass="error" />
 				</td>
@@ -68,10 +68,10 @@ $(function() {
     <tr>
        
        <td>SuperVisor</td>
-           <td> <form:select path="supervisorID">
+           <td> <form:select path="SuperVisorID">
             <form:option value="-" label="Select" />
             <form:options items="${SupervisorList}" itemValue="employeeID" itemLabel="employeename" />
-            </form:select> </td><td><form:errors path="supervisorID" cssStyle="color: red;"/></td>
+            </form:select> </td><td><form:errors path="SuperVisorID" cssStyle="color: red;"/></td>
     </tr>
    <tr>
    <td><input type="submit" value=${button}>

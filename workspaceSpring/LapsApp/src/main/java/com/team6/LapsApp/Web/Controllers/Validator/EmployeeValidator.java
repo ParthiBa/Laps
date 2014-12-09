@@ -29,7 +29,7 @@ public class EmployeeValidator implements Validator {
 	    }
 	    if(employee.getSuperVisorID().equals("-"))
 	    {
-	    	errors.rejectValue("supervisorID","Employee.supervisorID.empty") ;
+	    	errors.rejectValue("SuperVisorID","Employee.SuperVisorID.empty") ;
 	    }
 		
 	}

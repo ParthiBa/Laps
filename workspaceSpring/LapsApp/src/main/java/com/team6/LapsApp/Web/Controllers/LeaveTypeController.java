@@ -25,7 +25,7 @@ public class LeaveTypeController {
 	public ModelAndView createLeaveTypepage()
 	{
 	
-		ModelAndView mav= new ModelAndView("CreateLeaveType","leaveType",new LeaveType());
+		ModelAndView mav= new ModelAndView("Admin/CreateLeaveType","leaveType",new LeaveType());
 //		  mav.addObject("LeaveTypeList", leavetypeRepo.findAll());
 		return mav;
 		
@@ -64,7 +64,7 @@ public class LeaveTypeController {
     	List<LeaveType> list= leaveTypeService.GetAllLeaveTypes();
 		
 		mav.addObject("LeaveTypeList", list);
-		mav.setViewName("AllLeaveType");
+		mav.setViewName("Admin/AllLeaveType");
         return mav;
 	}
 	

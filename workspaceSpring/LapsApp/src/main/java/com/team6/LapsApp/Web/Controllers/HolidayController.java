@@ -27,7 +27,7 @@ public class HolidayController {
 	public ModelAndView CreateHolidayPage()
 	{
 	
-		ModelAndView mav= new ModelAndView("CreateHoliday","holiday",new Holiday());
+		ModelAndView mav= new ModelAndView("Admin/CreateHoliday","holiday",new Holiday());
 //		  mav.addObject("LeaveTypeList", leavetypeRepo.findAll());
 		return mav;
 		
@@ -44,7 +44,7 @@ public class HolidayController {
 //	  
 //		}
 		ModelAndView mav = new ModelAndView();
-		String message = "New Holiday " + holiday.getHollidayName()
+		String message = "New Holiday " + holiday.getHolidayName()
 				+ " was successfully created.";
 
 		holidayService.CreateHoliday(holiday);
@@ -65,7 +65,7 @@ public class HolidayController {
     	List<Holiday> list=holidayService.GetAllHolidays();
 		
 		mav.addObject("HolidayList", list);
-		mav.setViewName("AllHoliday");
+		mav.setViewName("Admin/AllHoliday");
         return mav;
 	}
 	
@@ -76,7 +76,7 @@ public class HolidayController {
 	    	ModelAndView ar=new ModelAndView();
 
 			Holiday holiday = holidayService.DeleteHoliday(holidayid);
-			String message =holiday.getHollidayName() +  "has been delected from records";
+			String message =holiday.getHolidayName() +  "has been delected from records";
 
 			ar.setViewName("home");
 			

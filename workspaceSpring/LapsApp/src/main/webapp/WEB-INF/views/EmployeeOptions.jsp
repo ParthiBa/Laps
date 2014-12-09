@@ -15,5 +15,6 @@
 <body>
 <a href="${pageContext.request.contextPath}/employee/newLeave.html">Apply Leave</a><br/>
 <a href="${pageContext.request.contextPath}/employee/newClaim.html">Apply Claim</a><br/>
+<a href="${pageContext.request.contextPath}/employee/GetPersonalLeaveHIstory.html">Personal Leaves History</a>
 </body>
 </html>

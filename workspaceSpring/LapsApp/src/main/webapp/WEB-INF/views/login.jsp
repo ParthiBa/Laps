@@ -14,8 +14,8 @@
 <body>
 <spring:url value="/Login/loginEmp.html" var="formUrl"/>
 <form:form method="POST" modelAttribute="UserModel" action="${fn:escapeXml(formUrl)}">
-<div align="center">Username:<form:input path="EmpID" value="E01" /><br/>
-Password:<form:input path="password"  value="E01"/> 
+<div align="center">Username:<form:input path="EmpID" value="E03" /><br/>
+Password:<form:input path="password"  value="E03"/> 
        <button type="submit">Login</button>
 </div>
 

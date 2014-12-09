@@ -7,6 +7,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Create Holiday</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script>
+$(function() {
+    $('.date-picker').datepicker( {
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true,
+        yearRange: "-35:+0",
+        dateFormat: 'dd/mm/yy',
+        onSelect: (function(dateText, inst) { 
+            $('.date-picker').val(dateText);
+        })
+});
+});
 </head>
 <body>
 <form:form method="POST" commandName="holiday" action="${pageContext.request.contextPath}/holiday/create">    
@@ -15,7 +30,7 @@
 
 <tr>
 <td>Holiday Name:</td>
-<td><form:input path="holidayName"/></td> 
+<td><form:input path="hollidayName"/></td> 
 <td></td>
 </tr>
 

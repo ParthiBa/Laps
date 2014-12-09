@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.team6.LapsApp.Web.Controllers.Validator.LoginSess;
 import com.team6.LapsApp.model.Employee;
+import com.team6.LapsApp.model.EmployeeBase;
 import com.team6.LapsApp.model.Manager;
 import com.team6.LapsApp.service.LeaveApplicationService;
 import com.team6.LapsApp.service.UserModel;
@@ -52,10 +53,14 @@ public class LoginController
        ModelAndView mav;
        Employee e = null;
        Manager m = null;
-    		   
+       
        LoginSess ls = (LoginSess)session.getAttribute("login");
 	   if(ls.getRoleID().equalsIgnoreCase("E"))
+	   {
 		   e = m_Service.findEmployee(user.getEmpID());
+		   if(e.getRoleID().equals("A"))
+			   ls.setRoleID("A");
+	   }
 	   else if(ls.getRoleID().equalsIgnoreCase("M"))
 		   m = m_Service.findManagerByID(user.getEmpID());
 	   
@@ -74,7 +79,8 @@ public class LoginController
 	   
 	   boolean result = false;
 	   
-	   if(ls.getRoleID().equalsIgnoreCase("E"))
+	   if(ls.getRoleID().equalsIgnoreCase("E") ||
+			        ls.getRoleID().equalsIgnoreCase("A"))
 	       result = e.getPassword().equals(user.getPassword());
 	   else if(ls.getRoleID().equalsIgnoreCase("M"))
 		   result = m.getPassword().equals(user.getPassword());

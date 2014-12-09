@@ -1,7 +1,5 @@
 package com.team6.LapsApp.model;
 
-import java.sql.Date;
-
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -9,7 +7,7 @@ import javax.validation.constraints.*;
 @Entity
 @Table(name="employees")
 public class Employee extends EmployeeBase{
-	@Column(name="supervisorid")
+	@Column(name="superVisorid")
 	private String SuperVisorID;
 
 	public String getSuperVisorID() {

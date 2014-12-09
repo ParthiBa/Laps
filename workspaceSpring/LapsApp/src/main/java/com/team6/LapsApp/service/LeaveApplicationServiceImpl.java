@@ -99,22 +99,6 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 	@Transactional
 	public void ApplyLeave(LeaveDetail ld) {
 		LeaveDetail ldlocal = ld;
-		ldlocal.setEmployeeID("E02");
-		ldlocal.setRoleID("E");
-		ldlocal.setLeaveTypeID("AN");
-		Calendar calendar = Calendar.getInstance();
-		// get a java date (java.util.Date) from the Calendar instance.
-		// this java date will represent the current date, or "now".
-		java.util.Date currentDate = calendar.getTime();
-		 
-		// now, create a java.sql.Date from the java.util.Date
-		java.sql.Date date1 = new java.sql.Date(currentDate.getTime());
-		java.sql.Date date2 = new java.sql.Date(currentDate.getTime()+20000);
-		ldlocal.setFromDate(date1);
-		ldlocal.setToDate(date2);
-		ldlocal.setNUmberOfDays(1.0);
-		ldlocal.setLeaveStatus("Applied");
-		ldlocal.setWorkDissemination("E02");
 		m_leavedetailscrud.saveAndFlush(ldlocal);
 	}
 
@@ -122,18 +106,7 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 	@Transactional(readOnly = true)
 	public void ApplyClaim(OTDetail ot) {
 		OTDetail localot = ot;
-		localot.m_itID.setEmployeeID("E02");
-		localot.setIsApproved(false);
-		localot.setIsFullDay(true);
-		Calendar calendar = Calendar.getInstance();
-		// get a java date (java.util.Date) from the Calendar instance.
-		// this java date will represent the current date, or "now".
-		java.util.Date currentDate = calendar.getTime();
-		 
-		// now, create a java.sql.Date from the java.util.Date
-		java.sql.Date date1 = new java.sql.Date(currentDate.getTime());
-		localot.m_itID.setM_otWorkedDate(date1);
-		m_otRepository.saveAndFlush(ot);
+		m_otRepository.saveAndFlush(localot);
 	}
 
 	@Override
@@ -166,9 +139,8 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 	}
 
 	@Override
-	public List<Employee> ListOfSuperVisor() {
-		m_empRepository.ListOfSuperVisor();
-		return null;
+	public List<Manager> ListOfSuperVisor() {
+		return (List<Manager>)m_managerRepository.findAll();
 	}
 	
 	@Override

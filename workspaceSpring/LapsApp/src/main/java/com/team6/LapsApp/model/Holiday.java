@@ -9,17 +9,18 @@ public class Holiday {
 
 	@Id
 	@Column(name="HolidayName")
-	private String hollidayName;
+	private String holidayName;
 	@Basic
 	@Column(name="startDate")
 	private Date startDate;
 	@Column(name="endDate")
 	private Date endDate;
-	public String getHollidayName() {
-		return hollidayName;
+	
+	public String getHolidayName() {
+		return holidayName;
 	}
-	public void setHollidayName(String hollidayName) {
-		this.hollidayName = hollidayName;
+	public void setHolidayName(String holidayName) {
+		this.holidayName = holidayName;
 	}
 	public Date getStartDate() {
 		return startDate;

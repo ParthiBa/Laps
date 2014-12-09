@@ -24,7 +24,7 @@ public interface LeaveApplicationService {
     public void ApplyClaim(OTDetail ot);
     public Employee findEmployee(String id);
     public Employee updateEmployeeDetails(Employee s); 
-    public List<Employee> ListOfSuperVisor();
+    public List<Manager> ListOfSuperVisor();
     
     //Admin
     public void CreateEmployeeID(Employee e);

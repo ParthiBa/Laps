@@ -29,7 +29,7 @@
 				<td>${employee.employeename}</td>
 				<td>${employee.dob}</td>
 				<td>${employee.roleID}</td>
-				<td>${employee.supervisorID}</td>
+				<td>${employee.SuperVisorID}</td>
 				<td><a href="${pageContext.request.contextPath}/admin/edit/${employee.employeeID}.html">Edit</a></td>
 <td><a href="${pageContext.request.contextPath}/admin/delete/${employee.employeeID}.html">Delete</a></td>
 			</tr>

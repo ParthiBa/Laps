@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/admin/CreateEmployee.html">Create or Update Employee</a><br/>
-<a href="/leavetype/create.html">Add Leave Type</a><br/>
-<a href="/holiday/AllHoliday.html">List Of Holiday</a><br/>
-<a href="/holiday/create.html">Add Holiday</a><br/>
+<a href="${pageContext.request.contextPath}/admin/CreateEmployee.html">Create or Update Employee</a><br/>
+<a href="${pageContext.request.contextPath}/leavetype/create.html">Add Leave Type</a><br/>
+<a href="${pageContext.request.contextPath}/holiday/AllHoliday.html">List Of Holiday</a><br/>
+<a href="${pageContext.request.contextPath}/holiday/create.html">Add Holiday</a><br/>
 </body>
 </html>

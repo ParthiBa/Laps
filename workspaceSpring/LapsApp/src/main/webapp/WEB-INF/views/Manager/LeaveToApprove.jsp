@@ -11,12 +11,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Leave To Approve</title>
+<script src="jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script> 
 </head>
 <body>
 <label>Welcome ${manager.employeename} </label>
 <c:forEach var="LeaveDetail" items="${manager.m_leaveToApprove}">
  <c:choose>
-   <c:when test="${(LeaveDetail.leaveStatus == 'Applied')}">
+   <c:when test="${(LeaveDetail.leaveStatus == 'APPLIED')}">
    <table style="width:600px;">
       <tr>
         <td>
@@ -25,14 +26,25 @@
         </td>
         <td>
 	        Status
-	        <form action="${pageContext.request.contextPath}/manager/approveorreject" method="post">
-				<input type="hidden" name="Approved"/>
-				<input type="hidden" name="Rejected"/>
+	        <form name="form" action="${pageContext.request.contextPath}/manager/approveorreject" method="post">
 				<input type="hidden" name="empid" value="${LeaveDetail.id.employeeID}"/>
-				<input type="hidden" name="date" value="${LeaveDetail.id.fromDate}"/>
-				<input type="submit" value="Approve" onclick="{document.form.Approved.value=this.value;}"/>&nbsp;&nbsp;
-				<input type="submit" value="Reject" onclick="{document.form.Rejected.value=this.value;}"/>
-			</form>
+				<input type="hidden" name="date" value="<fmt:formatDate value="${LeaveDetail.id.fromDate}" pattern="MM-dd-yyyy" />"/> 
+				<INPUT TYPE="HIDDEN" NAME="buttonName">
+            	<button id="approve "type="submit" name="buttonName">APPROVE</button>
+            	<button id="reject" TYPE="submit" name="buttonName">REJECT</button>
+            	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+            	</script>
+            	<script>
+            	$(document).ready(function(){
+            		$("#approve").click(function(){
+            			$("#approve").val('1');
+            		});
+            		$("#reject").click(function(){
+            			$("#reject").val('0');
+            		});
+            	});
+            	</script>
+		   </form>
         </td>
         <td>
 	        RoleID
