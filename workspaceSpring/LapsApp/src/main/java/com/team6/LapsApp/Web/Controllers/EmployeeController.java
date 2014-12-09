@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -27,19 +28,21 @@ public class EmployeeController {
 
 	@Autowired
 	private LeaveApplicationService m_Service;
+	
+	private Employee loggedinemp;
 		
 	@InitBinder
 	private void initBinder(WebDataBinder binder) {
 		//binder.setValidator(studentValidator);
 	}
 	
-	@RequestMapping(value = "/employeeForm", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/employeeForm", method = RequestMethod.GET)
     public String InitEmployeeForm(Map<String, Object> model) {
         Employee e = new Employee();
         e.setEmployeeID("E01");
         model.put("employeelogedin", e);
         return "EmployeeOptions";
-    }
+    }*/
 
 	@RequestMapping(value = "/newLeave", method = RequestMethod.GET)
     public String initLeaveCreationForm(@Param ("EmployeeID") String empid,Map<String, Object> model) {
@@ -48,14 +51,14 @@ public class EmployeeController {
         e.setEmployeeID("E01");
         model.put("employeelogedin", e);
         model.put("leave", ld);
-        return "LeaveApplication";
+        return "ApplyLeave";
     }
 
     @RequestMapping(value = "{EmployeeID}/newLeave", method = RequestMethod.POST)
     public String processLeaveCreationForm(@Param ("EmployeeID") String EmployeeID,@Valid LeaveDetail ld, BindingResult result, SessionStatus status) {
     	Manager m = this.m_Service.findManagerByID(ld.getM_manager().getEmployeeID());
 		m.addleavestoApprove(ld);
-		Employee e = this.m_Service.findById("E01");
+		Employee e = this.m_Service.findEmployee("E01");
 		e.addPersonalLeaves(ld);
 		ld.setM_empbase(e);
 	    this.m_Service.ApplyLeave(ld);
@@ -77,17 +80,20 @@ public class EmployeeController {
     public String processClaimCreationForm(@Param ("EmployeeID") String EmployeeID,@Valid OTDetail ot, BindingResult result, SessionStatus status) {
     	Manager m = this.m_Service.findManagerByID(ot.getM_manager().getEmployeeID());
 		m.addClaimtoApprove(ot);
-		Employee e = this.m_Service.findById("E01");
+		Employee e = this.m_Service.findEmployee("E01");
 		e.addPersonalclaims(ot);
 		ot.setM_empot(e);
 	    this.m_Service.ApplyClaim(ot);
 	    status.setComplete();
-	    return "redirect:/employee/GetPersonalLeaveHIstory/E01";
+	    return "EmployeeOptions";
     }
 
     @RequestMapping(value = "/GetPersonalLeaveHIstory/{empid}", method = RequestMethod.GET)
-	public ModelAndView GetPersonalLeaveHIstory(@Param ("empid") String empid) {
-		ModelAndView mav = new ModelAndView("EmployeeOptions");
-		return mav;
+	public String GetPersonalLeaveHIstory(@Param ("empid") String empid,
+													Map<String, Object> model) {
+        Employee e = new Employee();
+        e.setEmployeeID("E01");
+        model.put("employeelogedin", e);
+		return "PersonalLeaves";
 	}
 }

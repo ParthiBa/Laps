@@ -9,35 +9,44 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Claims To Approve</title>
+<title>Personal Leaves History</title>
 </head>
 <body>
-<label>Welcome ${manager.employeename} </label>
-<c:forEach var="OTDetail" items="${manager.m_claimsToApprove}">
- <c:choose>
-   <c:when test="${(OTDetail.isApproved == '0')}">
-   <table style="width:600px;">
+<label>Welcome ${employeelogedin.employeename} </label>
+<c:forEach var="LeaveDetail" items="${employeelogedin.m_personalLeaveHistory}">
+    <table style="width:600px;">
       <tr>
         <td>
 	        EmployeeID
-	        <c:out value="${OTDetail.m_itID.employeeID}"/>
+	        <c:out value="${LeaveDetail.id.employeeID}"/>
         </td>
         <td>
-	        OTWorkedDate
-	        <c:out value="${OTDetail.m_itID.m_otWorkedDate}"/>
+	        Status
+	        <c:out value="${LeaveDetail.leaveStatus}"/>
         </td>
         <td>
-	        IsFullDay
-	        <c:out value="${OTDetail.isFullDay}"/>
+	        RoleID
+	        <c:out value="${LeaveDetail.roleID}"/>
         </td>
         <td>
-	        ISApproved
-	        <c:out value="${OTDetail.isApproved}"/>
+	        LeaveTypeID
+	        <c:out value="${LeaveDetail.leaveTypeID}"/>
+        </td>
+        <td>
+	        FromDate
+	        <c:out value="${LeaveDetail.id.fromDate}"/>
+        </td>
+        <td>
+	        ToDate
+	        <c:out value="${LeaveDetail.toDate}"/>
+        </td>
+        <td>
+	        NumberOfDays
+	        <c:out value="${LeaveDetail.NUmberOfDays}"/>
         </td>
       </tr>
   </table>
-  </c:when>
- </c:choose>
-</c:forEach>
+  </c:forEach>
+</body>
 </body>
 </html>

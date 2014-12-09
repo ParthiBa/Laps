@@ -31,20 +31,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		Employee s = null;
-		String formattedDate = dateFormat.format(date);
-		/*try{
-			s = ers.findById("E01");
-		}
-		catch(Exception e){
-		e.printStackTrace();
-		}*/
-		//model.addAttribute("serverTime",s.getEmployeename());
-		
-		return "home";
+		return "login";
 	}
 	
 }

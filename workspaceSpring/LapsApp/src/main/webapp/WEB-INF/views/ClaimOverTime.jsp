@@ -1,7 +1,10 @@
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -10,9 +13,9 @@
 </head>
 
 <body>
-<form:form method="POST" commandName="otdetail" action="${pageContext.request.contextPath}/otdetail/create">
-   
-    
+<spring:url value="/employee/${employeelogedin.employeeID}/newClaim.html" var="formUrl"/>
+<form:form modelAttribute="claim" action="${fn:escapeXml(formUrl)}" method="post" class="form-horizontal"
+										               id="search-owner-form">
 <table>
 <tbody>
 <tr>
