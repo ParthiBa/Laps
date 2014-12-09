@@ -57,12 +57,15 @@ public class LoginController
        LoginSess ls = (LoginSess)session.getAttribute("login");
 	   if(ls.getRoleID().equalsIgnoreCase("E"))
 	   {
-		   e = m_Service.findEmployee(user.getEmpID());
+		   e = m_Service.findEmp(user.getEmpID(),user.getPassword());
 		   if(e.getRoleID().equals("A"))
 			   ls.setRoleID("A");
 	   }
 	   else if(ls.getRoleID().equalsIgnoreCase("M"))
-		   m = m_Service.findManagerByID(user.getEmpID());
+	   {
+//		   m = m_Service.findManagerByID(user.getEmpID());
+		   m=m_Service.findManagerByUserNamePassword(user.getEmpID(),user.getPassword());
+	   }
 	   
 	   if(ls.getRoleID().equalsIgnoreCase("E")){
 		   mav = new ModelAndView("EmployeeOptions");

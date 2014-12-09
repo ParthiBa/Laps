@@ -12,6 +12,9 @@
 <title>Personal Leaves History</title>
 </head>
 <body>
+<div style="text-align:center">
+<p><img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/10749959_406574562839941_3539789211823270904_o.jpg" align="center"/></p>
+</div>
 <label>Welcome ${employeelogedin.employeename} </label>
 <c:forEach var="LeaveDetail" items="${employeelogedin.m_personalLeaveHistory}">
     <table style="width:600px;">
@@ -47,6 +50,9 @@
       </tr>
   </table>
   </c:forEach>
+  <div style="position:absolute;margin-left:1000px;margin-top:140px;">
+<img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/10363327_406579082839489_7985457610561998074_n.jpg?oh=70707f0d16562411b57e9828fc7eadd1&oe=5515D69E&__gda__=1425911874_4b407021bc4cbab27d5b4860bbe784d7"/>
+</div>
 </body>
 </body>
 </html>

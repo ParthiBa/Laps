@@ -12,12 +12,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.team6.LapsApp.model.Employee;
 import com.team6.LapsApp.model.EmployeeRole;
+import com.team6.LapsApp.model.Entitlement;
 import com.team6.LapsApp.model.Holiday;
 import com.team6.LapsApp.model.LeaveDetail;
 import com.team6.LapsApp.model.LeaveDetailCompositeID;
 import com.team6.LapsApp.model.LeaveType;
 import com.team6.LapsApp.model.Manager;
 import com.team6.LapsApp.model.OTDetail;
+import com.team6.LapsApp.repository.EntilementReposistory;
 import com.team6.LapsApp.repository.HolidayReposistory;
 import com.team6.LapsApp.repository.LeaveTypeRepository;
 import com.team6.LapsApp.repository.OTDetailsCRUDRepository;
@@ -44,7 +46,9 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 	private HolidayReposistory hr;
 	@Resource
     private LeaveTypeRepository lr;
-	
+	 
+	@Resource
+	private EntilementReposistory entilementReposistory;
 	@Override
 	@Transactional(readOnly = true)
 	public List<LeaveDetail> ListPersonTookMaxLeave() {
@@ -55,7 +59,8 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 	@Override
 	@Transactional(readOnly = true)
 	public Employee findEmployee(String id) {
-		return m_empRepository.findOne(id);
+		Employee e= m_empRepository.findOne(id);
+		return e;
 	}
 
 	@Override
@@ -112,7 +117,8 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 	@Override
 	@Transactional(readOnly = true)
 	public Manager findManagerByID(String empid) {
-		return m_managerRepository.findOne(empid);
+		Manager m = m_managerRepository.findOne(empid);
+		return m;
 	}
 
 	@Override
@@ -199,4 +205,130 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 		m_empRepository.findAll();
 		return null;
 	}
+
+	@Override
+	public void CreateManager(Manager e) {
+		m_managerRepository.save(e);
+	}
+
+	@Override
+	public void UpdateManager(Manager e) {
+		Manager toUpdateemp = m_managerRepository.findOne(e.getEmployeeID());
+		if(toUpdateemp!=null)
+		{
+			toUpdateemp.setDob(e.getDob());
+			toUpdateemp.setRoleID(e.getRoleID());
+			toUpdateemp.setEmployeename(e.getEmployeename());
+		}
+	}
+
+	@Override
+	public Manager DeleteManager(String empid) {
+		boolean x = m_managerRepository.exists(empid);
+        Manager emp=m_managerRepository.findOne(empid);
+        if(x)
+        {
+        	m_managerRepository.delete(emp);
+        }
+		return emp;
+	}
+	@Override
+	public Manager findManagerByUserNamePassword(String empid, String password) {
+		// TODO Auto-generated method stub
+	Manager m=	m_managerRepository.FindManagerByUandPassword(empid, password);
+	return m;
+	}
+	
+	public List<EmployeeRole> findAllEmployeeRole()
+	{
+      return	(List<EmployeeRole>) roleRepository.findAll();	
+	}
+	
+	
+	public EmployeeRole deleteEmployeeRole (String roleid)
+	{
+		EmployeeRole obj=roleRepository.findOne(roleid);
+		roleRepository.delete(obj);
+		return obj;
+		
+	}
+	
+	@Transactional
+	public EmployeeRole CreateEmpRole(EmployeeRole newRole)
+	{
+		return roleRepository.save(newRole);
+	}
+
+	/*@Override
+	public Employee findAdmin(String username, String password) {
+		// TODO Auto-generated method stub
+		Employee e= m_empRepository.FindAdmin(username, password);
+		return e;
+	}*/
+
+	@Override
+	public Employee findEmp(String username, String password) {
+		// TODO Auto-generated method stub
+		Employee e =m_empRepository.FindEmp(username, password);
+		return e;
+	}
+	
+	
+	@Transactional
+	public Entitlement update(Entitlement e) {
+		
+		Entitlement updatedEntitlement = entilementReposistory.findByOne(e.getRoleId(),e.getLeaveTypeId());
+		updatedEntitlement.setRoleId(e.getRoleId());
+		updatedEntitlement.setLeaveTypeId(e.getLeaveTypeId());
+		updatedEntitlement.setNumOfDays(e.getNumOfDays());
+		updatedEntitlement.setApprovelRoleId(e.getApprovelRoleId());
+	
+		return updatedEntitlement;
+	}
+
+
+
+	@Override
+	@Transactional
+	public List<Entitlement> findAll() {
+		
+		return (List<Entitlement>) entilementReposistory.findAll();	}
+
+
+
+	@Transactional
+	public Entitlement delete(Entitlement e) {
+		
+		Entitlement deletedEntitlement = entilementReposistory.findByOne(e.getRoleId(),e.getLeaveTypeId());
+		entilementReposistory.delete(deletedEntitlement);
+		return deletedEntitlement;
+	}
+
+	
+	@Transactional
+	@Override
+	public List<EmployeeRole> findRoleAll() {
+		// TODO Auto-generated method stub
+		return (List<EmployeeRole>) roleRepository.findAll();
+	}
+
+	@Override
+	@Transactional
+	public List<LeaveType> findLeaveAll() {
+		return (List<LeaveType>) lr.findAll();
+	}
+
+
+	@Transactional
+	public Entitlement create(Entitlement e) {
+		Entitlement createdEntitlement = e;
+		return entilementReposistory.save(createdEntitlement);
+	}
+
+	@Override
+	public Entitlement findByOne(String rid, String lid) {
+		// TODO Auto-generated method stub
+		return entilementReposistory.findByOne(rid, lid);
+	}
+
 }

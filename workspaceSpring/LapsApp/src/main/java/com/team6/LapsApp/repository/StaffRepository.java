@@ -15,4 +15,6 @@ public interface StaffRepository extends CrudRepository<Employee,String>{
 	
 	@Query("SELECT e FROM Employee e WHere LOWER(e.employeename) LIKE LOWER(:na)")
 	List<Employee> SearchbyName(@Param("na") String na);
+	@Query("SELECT e FROM Employee e WHere  e.employeeID=(:eid) AND e.password=(:password)")
+	Employee FindEmp(@Param("eid") String username,@Param("password")String password);
 }

@@ -25,6 +25,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.team6.LapsApp.Web.Controllers.Validator.*;
 import com.team6.LapsApp.model.Employee;
+import com.team6.LapsApp.model.EmployeeBase;
+import com.team6.LapsApp.model.Manager;
 import com.team6.LapsApp.repository.RoleIDReposistory;
 import com.team6.LapsApp.service.LeaveApplicationService;
 
@@ -74,7 +76,23 @@ public class AdminController {
 		String message = "New Employee " + employee.getEmployeename()
 				+ " was successfully created.";
 
-		empService.CreateEmployeeID(employee);
+		
+		if(employee.getRoleID().equalsIgnoreCase("E")
+				|| employee.getRoleID().equalsIgnoreCase("A"))
+		{
+			empService.CreateEmployeeID((Employee) employee);
+		}
+		else if(employee.getRoleID().equalsIgnoreCase("M"))
+		{
+			Manager m = new Manager();
+			m.setDob(employee.getDob());
+			m.setEmployeeID(employee.getEmployeeID());
+			m.setEmployeename(employee.getEmployeename());
+			m.setPassword(employee.getPassword());
+			m.setRoleID(employee.getRoleID());
+			empService.CreateManager(m);
+		}
+		
 		String s="create";
 		mav.addObject("actiont",s);
 		

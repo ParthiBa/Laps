@@ -21,10 +21,10 @@
 			<tbody>
 			<c:forEach var="holiday" items="${HolidayList}">
 			<tr>
-				<td>${holiday.hollidayName}</td>
+				<td>${holiday.holidayName}</td>
 				<td>${holiday.startDate}</td>
 				<td>${holiday.endDate}</td>
-				<td><a href="${pageContext.request.contextPath}/holiday/delete/${holiday.hollidayName}.html">Delete</a></td>
+				<td><a href="${pageContext.request.contextPath}/holiday/delete/${holiday.holidayName}.html">Delete</a></td>
 			</tr>
 			</c:forEach>
 			</tbody>
