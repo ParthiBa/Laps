@@ -19,6 +19,7 @@ import com.team6.LapsApp.model.LeaveDetailCompositeID;
 import com.team6.LapsApp.model.LeaveType;
 import com.team6.LapsApp.model.Manager;
 import com.team6.LapsApp.model.OTDetail;
+import com.team6.LapsApp.model.OTDetailsCompositeID;
 import com.team6.LapsApp.repository.EntilementReposistory;
 import com.team6.LapsApp.repository.HolidayReposistory;
 import com.team6.LapsApp.repository.LeaveTypeRepository;
@@ -111,7 +112,7 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 	@Transactional(readOnly = true)
 	public void ApplyClaim(OTDetail ot) {
 		OTDetail localot = ot;
-		m_otRepository.saveAndFlush(localot);
+		m_otRepository.saveAndFlush(localot);	
 	}
 
 	@Override
@@ -125,12 +126,22 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 	public LeaveDetail GetLeaveById(LeaveDetailCompositeID key) {
 		return m_leavedetailscrud.findOne(key);
 	}
-
+	@Override
+	public OTDetail GetotId(OTDetailsCompositeID ot)
+	{
+		return m_otRepository.findOne(ot);
+	}
+	
 	@Override
 	public void LeaveDetailsUpdate(LeaveDetail ld) {
 		m_leavedetailscrud.save(ld);
 	}
-
+	@Override
+	public void CLaimDetailsUpdate(OTDetail ot)
+	{
+		m_otRepository.saveAndFlush(ot);
+	}
+	
 	@Override
 	public Employee updateEmployeeDetails(Employee s) {
 		Employee toUpdateemp = m_empRepository.findOne(s.getEmployeeID());
@@ -330,5 +341,11 @@ public class LeaveApplicationServiceImpl implements LeaveApplicationService{
 		// TODO Auto-generated method stub
 		return entilementReposistory.findByOne(rid, lid);
 	}
-
+	
+	@Override
+	public Manager findbykey(String empID)
+	{
+		Manager m=m_managerRepository.FindManagerByU(empID);
+		return m;
+	}
 }

@@ -12,6 +12,7 @@ import com.team6.LapsApp.model.LeaveDetailCompositeID;
 import com.team6.LapsApp.model.LeaveType;
 import com.team6.LapsApp.model.Manager;
 import com.team6.LapsApp.model.OTDetail;
+import com.team6.LapsApp.model.OTDetailsCompositeID;
 
 public interface LeaveApplicationService {
 	
@@ -19,6 +20,7 @@ public interface LeaveApplicationService {
 	public Manager findManagerByID(String empid); 
 	public List<LeaveDetail> ListPersonTookMaxLeave();
 	public Manager findManagerByUserNamePassword(String empid,String password); 
+	public Manager findbykey(String empID);
 		
 	//employess
 	
@@ -56,7 +58,9 @@ public interface LeaveApplicationService {
     //General
     public List<LeaveType> GetAllLeaveTypes();
     public LeaveDetail GetLeaveById(LeaveDetailCompositeID key);
+    public OTDetail GetotId(OTDetailsCompositeID key);
     public void LeaveDetailsUpdate(LeaveDetail ld);
+    public void CLaimDetailsUpdate(OTDetail ld);
     public List<Employee> SearchEmpbyName(String na);
     public List<Holiday> GetAllHolidays();
     public List<Employee>FindAllEmployee();

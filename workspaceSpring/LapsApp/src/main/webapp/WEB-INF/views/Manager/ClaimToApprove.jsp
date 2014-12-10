@@ -19,25 +19,52 @@
 <c:forEach var="OTDetail" items="${manager.m_claimsToApprove}">
  <c:choose>
    <c:when test="${(OTDetail.isApproved == '0')}">
-   <table style="width:600px;">
-      <tr>
-        <td>
-	        EmployeeID
+   <table style="width:600px;" border="1px" cellpadding="0" cellspacing="0" >
+   <thead>
+      <td>EmployeeID</td>
+       <td>OTWorkedDate</td>
+        <td>IsFullDay</td>
+         <td>ISApproved</td>             
+      
+   </thead>
+   <tbody>
+   <tr>
+      <td>	       
 	        <c:out value="${OTDetail.m_itID.employeeID}"/>
         </td>
         <td>
-	        OTWorkedDate
+	        
 	        <c:out value="${OTDetail.m_itID.m_otWorkedDate}"/>
         </td>
         <td>
-	        IsFullDay
+	       
 	        <c:out value="${OTDetail.isFullDay}"/>
         </td>
         <td>
-	        ISApproved
+	       
 	        <c:out value="${OTDetail.isApproved}"/>
+	        <form name="form" action="${pageContext.request.contextPath}/manager/approveorrejectclaim" method="post">
+				<input type="hidden" name="empid" value="${OTDetail.m_itID.employeeID}"/>
+				<input type="hidden" name="date" value="<fmt:formatDate value="${OTDetail.m_itID.m_otWorkedDate}" pattern="MM-dd-yyyy" />"/> 
+				<INPUT TYPE="HIDDEN" NAME="buttonName">
+            	<button id="approve "type="submit" name="buttonName">APPROVE</button>
+            	<button id="reject" TYPE="submit" name="buttonName">REJECT</button>
+            	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+            	</script>
+            	<script>
+            	$(document).ready(function(){
+            		$("#approve").click(function(){
+            			$("#approve").val('1');
+            		});
+            		$("#reject").click(function(){
+            			$("#reject").val('0');
+            		});
+            	});
+            	</script>
+		   </form>
         </td>
-      </tr>
+        </tr>
+   </tbody>      
   </table>
   </c:when>
  </c:choose>

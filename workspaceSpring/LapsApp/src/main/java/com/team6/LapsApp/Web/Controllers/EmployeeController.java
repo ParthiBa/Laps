@@ -1,5 +1,6 @@
 package com.team6.LapsApp.Web.Controllers;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -61,11 +63,20 @@ public class EmployeeController {
 	private HolidayReposistory holidayRepo;
 
 
+	@InitBinder
+    public void initBinder(WebDataBinder binder) {
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+        sdf.setLenient(true);
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
+    }
+	
 	public Boolean ValidateLeaveApproval(LeaveDetail LD) {
-		String currentLeaveType = ltyperepo.findOne(LD.getLeaveTypeID())
-				.getLeaveTypeID();
-		String currentRoleType = roleIDrepo.findOne(LD.getRoleID())
-				.getRoleType();
+//		String currentLeaveType = ltyperepo.findOne(LD.getLeaveTypeID())
+//				.getLeaveTypeID();
+		String currentLeaveType=ltyperepo.findByLeavetype(LD.getLeaveTypeID()).getLeaveTypeId();
+//		String currentRoleType = roleIDrepo.findOne(LD.getRoleID())
+//				.getRoleType();
+		String currentRoleType = roleIDrepo.findByRoleID(LD.getRoleID()).getRoleId();
 		EntitlementId Id = new EntitlementId(LD.getRoleID(),
 				LD.getLeaveTypeID());
 	
@@ -192,15 +203,16 @@ public class EmployeeController {
     	
     	if(ValidateLeaveApproval(ld) == false)
     		return "ApplyLeave";
-    	
-    	Manager m = this.m_Service.findManagerByID(ld.getM_manager().getEmployeeID());
+   	
+    	Manager m= this.m_Service.findbykey(ld.getM_manager().getEmployeeID());
 		m.addleavestoApprove(ld);
 		Employee e = this.m_Service.findEmployee(ld.getEmployeeID());
 		e.addPersonalLeaves(ld);
+		ld.setRoleID(e.getRoleID());
 		ld.setM_empbase(e);
 	    this.m_Service.ApplyLeave(ld);
 	    status.setComplete();
-	    return "redirect:/employee/GetmaxleavePerson/E01";
+	    return "redirect:/employee/GetPersonalLeaveHIstory";
     }
     
     @RequestMapping(value = "/newClaim", method = RequestMethod.GET)
@@ -222,11 +234,12 @@ public class EmployeeController {
 
     @RequestMapping(value = "{EmployeeID}/newClaim", method = RequestMethod.POST)
     public String processClaimCreationForm(@Param ("EmployeeID") String EmployeeID,@Valid OTDetail ot, BindingResult result, SessionStatus status) {
-    	Manager m = this.m_Service.findManagerByID(ot.getM_manager().getEmployeeID());
+    	Manager m = this.m_Service.findbykey(ot.getM_manager().getEmployeeID());
 		m.addClaimtoApprove(ot);
 		Employee e = this.m_Service.findEmployee(ot.getEmployeeID());
 		e.addPersonalclaims(ot);
 		ot.setM_empot(e);
+		
 	    this.m_Service.ApplyClaim(ot);
 	    status.setComplete();
 	    return "EmployeeOptions";

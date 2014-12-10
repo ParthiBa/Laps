@@ -11,4 +11,7 @@ public interface ManagerRepository extends CrudRepository<Manager,String>{
 	
 	@Query("SELECT e FROM Manager e Where LOWER(e.employeeID) = LOWER(:empID) AND LOWER(e.password) = LOWER(:password)")
 	Manager FindManagerByUandPassword(@Param("empID") String empID,@Param("password") String password);
+	
+	@Query("SELECT e FROM Manager e Where LOWER(e.employeeID) = LOWER(:empID) ")
+	Manager FindManagerByU(@Param("empID") String empID);
 }

@@ -22,6 +22,8 @@ import com.team6.LapsApp.model.EmployeeBase;
 import com.team6.LapsApp.model.LeaveDetail;
 import com.team6.LapsApp.model.LeaveDetailCompositeID;
 import com.team6.LapsApp.model.Manager;
+import com.team6.LapsApp.model.OTDetail;
+import com.team6.LapsApp.model.OTDetailsCompositeID;
 import com.team6.LapsApp.service.LeaveApplicationService;
 
 @Controller
@@ -59,7 +61,7 @@ public class ManagerController {
         	e = new Employee();
         
         e.setEmployeeID(ls.getEmpiD());
-		e = (Manager) m_Service.findManagerByID(e.getEmployeeID());
+		e = (Manager) m_Service.findbykey(e.getEmployeeID());
 	    model.put("manager", e);
         return "Manager/LeaveToApprove";
 	}
@@ -75,7 +77,7 @@ public class ManagerController {
         	e = new Employee();
         
         e.setEmployeeID(ls.getEmpiD());
-		e = (Manager) m_Service.findManagerByID(e.getEmployeeID());
+		e = (Manager) m_Service.findbykey(e.getEmployeeID());
 	    model.put("manager", e);
         return "Manager/ClaimToApprove";
 	}
@@ -96,5 +98,23 @@ public class ManagerController {
 		m_Service.LeaveDetailsUpdate(ld);
 		
 		return "redirect:/manager/InitManagerLeaveApproveWindow";
+    }
+	
+	@RequestMapping(value = "/approveorrejectclaim", method = RequestMethod.POST)
+	public String approveorrejectclaim(@RequestParam String buttonName
+									,@RequestParam String empid
+								    ,@RequestParam Date date){
+		
+		OTDetailsCompositeID ldkey = new OTDetailsCompositeID(empid,date);
+		OTDetail ld = m_Service.GetotId(ldkey);
+		
+		if(buttonName.equalsIgnoreCase(","))
+			ld.setIsApproved(true);
+		else
+			ld.setIsApproved(false);
+		
+		m_Service.CLaimDetailsUpdate(ld);
+		
+		return "redirect:/manager/InitManagerClaimApproveWindow";
     }
 }

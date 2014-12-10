@@ -21,14 +21,21 @@
 <c:forEach var="LeaveDetail" items="${manager.m_leaveToApprove}">
  <c:choose>
    <c:when test="${(LeaveDetail.leaveStatus == 'APPLIED')}">
-   <table style="width:600px;">
-      <tr>
-        <td>
-	        EmployeeID
-	        <c:out value="${LeaveDetail.id.employeeID}"/>
-        </td>
-        <td>
-	        Status
+   <table style="width:600px;" border="1px" cellpadding="0" cellspacing="0">
+   <thead>
+        <td>EmployeeID</td>
+        <td>Status</td>
+        <td> RoleID</td>
+        <td> LeaveTypeID</td>
+        <td>FromDate</td>
+        <td> ToDate</td>
+        <td> NumberOfDays</td>       
+   </thead>
+   <tbody>
+   <tr>
+     <td> <c:out value="${LeaveDetail.id.employeeID}"/></td>
+     <td>
+	        
 	        <form name="form" action="${pageContext.request.contextPath}/manager/approveorreject" method="post">
 				<input type="hidden" name="empid" value="${LeaveDetail.id.employeeID}"/>
 				<input type="hidden" name="date" value="<fmt:formatDate value="${LeaveDetail.id.fromDate}" pattern="MM-dd-yyyy" />"/> 
@@ -50,26 +57,27 @@
 		   </form>
         </td>
         <td>
-	        RoleID
+	       
 	        <c:out value="${LeaveDetail.roleID}"/>
         </td>
         <td>
-	        LeaveTypeID
+	       
 	        <c:out value="${LeaveDetail.leaveTypeID}"/>
         </td>
-        <td>
-	        FromDate
+         <td>
+	        
 	        <c:out value="${LeaveDetail.id.fromDate}"/>
         </td>
         <td>
-	        ToDate
+	       
 	        <c:out value="${LeaveDetail.toDate}"/>
         </td>
-        <td>
-	        NumberOfDays
+         <td>
+	       
 	        <c:out value="${LeaveDetail.NUmberOfDays}"/>
         </td>
-      </tr>
+   </tr>
+   </tbody>    
   </table>
   </c:when>
  </c:choose>

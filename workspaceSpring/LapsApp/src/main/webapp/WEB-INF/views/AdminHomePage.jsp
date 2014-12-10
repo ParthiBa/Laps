@@ -13,6 +13,11 @@
 </div>
 <div style="text-align:center;font-size:40px" >
 <a href="${pageContext.request.contextPath}/admin/CreateEmployee.html">Create or Update Employee</a><br/>
+<a href="${pageContext.request.contextPath}/admin/SearchEmployee.html">Search Employee</a><br/>
+<a href="${pageContext.request.contextPath}/admin/AllEmployee.html">List of Employees</a><br/>
+
+<a href="${pageContext.request.contextPath}/leavetype/AllLeaveType.html">Add Leave Type</a><br/>
+
 <a href="${pageContext.request.contextPath}/leavetype/create.html">Add Leave Type</a><br/>
 <a href="${pageContext.request.contextPath}/holiday/AllHoliday.html">List Of Holiday</a><br/>
 <a href="${pageContext.request.contextPath}/holiday/create.html">Add Holiday</a><br/>

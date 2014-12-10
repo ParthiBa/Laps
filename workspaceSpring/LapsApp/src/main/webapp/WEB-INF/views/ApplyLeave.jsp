@@ -76,12 +76,12 @@ $(function() {
             </div>
             <div>
 		    	<label class="control-label">LeaveStatus:</label>
-		    	<form:select path="LeaveTypeID">
+		    	<form:select path="leaveStatus">
 	  				<form:options items="${LeaveStatusList}"></form:options> 
 		  		</form:select>
            </div>
 		   <div>
-		    	<label class="control-label">workDissemination"/></label>
+		    	<label class="control-label">workDissemination"</label>
 		     	<form:input path="workDissemination" size="30" maxlength="80" value="E01"/>
 		   </div>	   
 		   <div>
