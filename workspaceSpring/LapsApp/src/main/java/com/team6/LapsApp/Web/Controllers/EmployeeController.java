@@ -201,8 +201,8 @@ public class EmployeeController {
     @RequestMapping(value = "{EmployeeID}/newLeave", method = RequestMethod.POST)
     public String processLeaveCreationForm(@Param ("EmployeeID") String EmployeeID,@Valid LeaveDetail ld, BindingResult result, SessionStatus status) {
     	
-    	if(ValidateLeaveApproval(ld) == false)
-    		return "ApplyLeave";
+    	/*if(ValidateLeaveApproval(ld) == false)
+    		return "ApplyLeave";*/
    	
     	Manager m= this.m_Service.findbykey(ld.getM_manager().getEmployeeID());
 		m.addleavestoApprove(ld);
